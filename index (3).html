@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Uttar Pradesh Tennis Ball Cricket Tournament - Har district ka champion, fir State Level Mega Contest. Register your team today!" />
+  <meta name="keywords" content="UP Cricket, Tennis Ball Cricket, Uttar Pradesh Tournament, Cricket Registration" />
+  <title>UP Tennis Ball Cricket Tournament</title>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;600;700&display=swap" rel="stylesheet" />
+  <!-- jsPDF -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ========== NAVBAR ========== -->
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="#home" class="nav-logo">
+      <i class="fas fa-baseball-ball"></i>
+      <span>UP Cricket</span>
+    </a>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="#home" class="nav-link">Home</a></li>
+      <li><a href="#register" class="nav-link">Register</a></li>
+      <li><a href="#payment" class="nav-link">Payment</a></li>
+      <li><a href="#districts" class="nav-link">Districts</a></li>
+      <li><a href="#fixtures" class="nav-link">Fixtures</a></li>
+      <li><a href="#qualified" class="nav-link">Qualified</a></li>
+      <li><a href="#mega" class="nav-link">Mega Contest</a></li>
+      <li><a href="#winners" class="nav-link">Winners</a></li>
+      <li><a href="#prizes" class="nav-link">Prizes</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+      <li><a href="#admin" class="nav-link admin-btn"><i class="fas fa-lock"></i> Admin</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ========== TOAST ========== -->
+<div id="toast" class="toast"></div>
+
+<!-- ========== HOME ========== -->
+<section id="home" class="hero-section">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <div class="hero-badge"><i class="fas fa-trophy"></i> UP's Biggest Cricket Tournament</div>
+    <h1 class="hero-title">Uttar Pradesh<br><span class="gold">Tennis Ball Cricket</span><br>Tournament</h1>
+    <p class="hero-sub">Har district ka tournament • Har district se ek champion • State Level Mega Contest</p>
+    <div class="hero-fee">Entry Fee: <span>₹2,100</span></div>
+    <div class="hero-btns">
+      <a href="#register" class="btn btn-primary"><i class="fas fa-users"></i> Register Team</a>
+      <a href="#districts" class="btn btn-outline"><i class="fas fa-map-marker-alt"></i> View Districts</a>
+      <a href="https://wa.me/919999999999" target="_blank" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+    </div>
+  </div>
+  <div class="hero-balls">
+    <div class="ball b1"></div>
+    <div class="ball b2"></div>
+    <div class="ball b3"></div>
+  </div>
+</section>
+
+<!-- Tournament Format -->
+<section class="format-section">
+  <div class="container">
+    <h2 class="section-title">Tournament Format <span class="gold">🏏</span></h2>
+    <div class="format-grid">
+      <div class="format-card">
+        <div class="format-icon"><i class="fas fa-map-marked-alt"></i></div>
+        <h3>District Tournament</h3>
+        <p>UP ke har district mein alag tournament. Teams apne district se entry karengi.</p>
+      </div>
+      <div class="format-card">
+        <div class="format-icon"><i class="fas fa-medal"></i></div>
+        <h3>District Champion</h3>
+        <p>Har district ka winner "District Champion" ban kar State Level Mega Contest mein jayega.</p>
+      </div>
+      <div class="format-card">
+        <div class="format-icon"><i class="fas fa-star"></i></div>
+        <h3>State Mega Contest</h3>
+        <p>Sabhi district champions ek saath compete karenge State Level Mega Contest mein.</p>
+      </div>
+      <div class="format-card highlight-card">
+        <div class="format-icon gold"><i class="fas fa-trophy"></i></div>
+        <h3>UP Champion</h3>
+        <p>Final winner bnega <strong>"UP Tennis Ball Cricket Champion"</strong> — aur jeeta ek bada prize!</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Prize Highlights -->
+<section class="prize-highlights">
+  <div class="container">
+    <h2 class="section-title">Prize <span class="gold">Highlights</span></h2>
+    <div id="prizeHighlights" class="prize-grid">
+      <!-- Populated by JS -->
+    </div>
+  </div>
+</section>
+
+<!-- Rules -->
+<section class="rules-section">
+  <div class="container">
+    <h2 class="section-title">Tournament <span class="gold">Rules</span></h2>
+    <div class="rules-grid">
+      <div class="rule-item"><i class="fas fa-check-circle"></i> Tennis ball cricket only</div>
+      <div class="rule-item"><i class="fas fa-check-circle"></i> Minimum 11 players per team</div>
+      <div class="rule-item"><i class="fas fa-check-circle"></i> Captain must be 18+ years old</div>
+      <div class="rule-item"><i class="fas fa-check-circle"></i> Players must be from same district</div>
+      <div class="rule-item"><i class="fas fa-check-circle"></i> Entry fee ₹2100 non-refundable</div>
+      <div class="rule-item"><i class="fas fa-check-circle"></i> Team must wear uniform jersey</div>
+      <div class="rule-item"><i class="fas fa-check-circle"></i> Report 30 min before match time</div>
+      <div class="rule-item"><i class="fas fa-check-circle"></i> Organizer's decision is final</div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== TEAM REGISTRATION ========== -->
+<section id="register" class="section-pad">
+  <div class="container">
+    <h2 class="section-title">Team <span class="gold">Registration</span></h2>
+    <div class="form-card" id="registrationArea">
+      <form id="registrationForm" novalidate>
+        <div class="form-grid">
+          <div class="form-group">
+            <label><i class="fas fa-shield-alt"></i> Team Name *</label>
+            <input type="text" id="teamName" placeholder="Enter team name" required />
+          </div>
+          <div class="form-group">
+            <label><i class="fas fa-user"></i> Captain Name *</label>
+            <input type="text" id="captainName" placeholder="Enter captain name" required />
+          </div>
+          <div class="form-group">
+            <label><i class="fas fa-phone"></i> Mobile Number *</label>
+            <input type="tel" id="mobileNumber" placeholder="10-digit mobile" maxlength="10" required />
+          </div>
+          <div class="form-group">
+            <label><i class="fab fa-whatsapp"></i> WhatsApp Number *</label>
+            <input type="tel" id="whatsappNumber" placeholder="WhatsApp number" maxlength="10" required />
+          </div>
+          <div class="form-group">
+            <label><i class="fas fa-envelope"></i> Email</label>
+            <input type="email" id="emailAddr" placeholder="Email address (optional)" />
+          </div>
+          <div class="form-group">
+            <label><i class="fas fa-map-marker-alt"></i> District *</label>
+            <select id="districtSelect" required>
+              <option value="">-- Select District --</option>
+              <option>Agra</option><option>Aligarh</option><option>Ambedkar Nagar</option>
+              <option>Amethi</option><option>Amroha</option><option>Auraiya</option>
+              <option>Ayodhya</option><option>Azamgarh</option><option>Baghpat</option>
+              <option>Bahraich</option><option>Ballia</option><option>Balrampur</option>
+              <option>Banda</option><option>Barabanki</option><option>Bareilly</option>
+              <option>Basti</option><option>Bhadohi</option><option>Bijnor</option>
+              <option>Budaun</option><option>Bulandshahr</option><option>Chandauli</option>
+              <option>Chitrakoot</option><option>Deoria</option><option>Etah</option>
+              <option>Etawah</option><option>Farrukhabad</option><option>Fatehpur</option>
+              <option>Firozabad</option><option>Gautam Buddha Nagar</option><option>Ghaziabad</option>
+              <option>Ghazipur</option><option>Gonda</option><option>Gorakhpur</option>
+              <option>Hamirpur</option><option>Hapur</option><option>Hardoi</option>
+              <option>Hathras</option><option>Jalaun</option><option>Jaunpur</option>
+              <option>Jhansi</option><option>Kannauj</option><option>Kanpur Dehat</option>
+              <option>Kanpur Nagar</option><option>Kasganj</option><option>Kaushambi</option>
+              <option>Kushinagar</option><option>Lakhimpur Kheri</option><option>Lalitpur</option>
+              <option>Lucknow</option><option>Maharajganj</option><option>Mahoba</option>
+              <option>Mainpuri</option><option>Mathura</option><option>Mau</option>
+              <option>Meerut</option><option>Mirzapur</option><option>Moradabad</option>
+              <option>Muzaffarnagar</option><option>Pilibhit</option><option>Pratapgarh</option>
+              <option>Prayagraj</option><option>Raebareli</option><option>Rampur</option>
+              <option>Saharanpur</option><option>Sambhal</option><option>Sant Kabir Nagar</option>
+              <option>Shahjahanpur</option><option>Shamli</option><option>Shravasti</option>
+              <option>Siddharthnagar</option><option>Sitapur</option><option>Sonbhadra</option>
+              <option>Sultanpur</option><option>Unnao</option><option>Varanasi</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label><i class="fas fa-city"></i> Village / City *</label>
+            <input type="text" id="villageCity" placeholder="Village or city name" required />
+          </div>
+          <div class="form-group">
+            <label><i class="fas fa-users"></i> Total Players *</label>
+            <input type="number" id="totalPlayers" placeholder="Min 11" min="11" max="25" required />
+          </div>
+          <div class="form-group full-width">
+            <label><i class="fas fa-list"></i> Player Names * (one per line)</label>
+            <textarea id="playerNames" rows="5" placeholder="1. Player One&#10;2. Player Two&#10;..." required></textarea>
+          </div>
+          <div class="form-group">
+            <label><i class="fas fa-tshirt"></i> Jersey Color *</label>
+            <input type="text" id="jerseyColor" placeholder="e.g. Blue & White" required />
+          </div>
+          <div class="form-group">
+            <label><i class="fas fa-image"></i> Team Logo (optional)</label>
+            <input type="file" id="teamLogo" accept="image/*" />
+          </div>
+        </div>
+        <div class="form-group terms-group">
+          <label class="checkbox-label">
+            <input type="checkbox" id="termsCheck" required />
+            <span>I agree to the <a href="#rules" onclick="return false">Tournament Rules & Terms</a>. Entry fee ₹2100 is non-refundable.</span>
+          </label>
+        </div>
+        <button type="submit" class="btn btn-primary full-btn">
+          <i class="fas fa-paper-plane"></i> Submit Registration
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ========== PAYMENT ========== -->
+<section id="payment" class="section-pad dark-section">
+  <div class="container">
+    <h2 class="section-title">Payment <span class="gold">Details</span></h2>
+    <div id="paymentArea">
+      <div class="payment-grid">
+        <div class="payment-card">
+          <h3><i class="fas fa-qrcode"></i> Scan & Pay</h3>
+          <div class="qr-placeholder">
+            <i class="fas fa-qrcode"></i>
+            <p>QR Code</p>
+            <small>Entry Fee: ₹2,100</small>
+          </div>
+          <div class="upi-box">
+            <strong>UPI ID:</strong> <span id="upiIdDisplay">uptennis@upi</span>
+            <button onclick="copyText('uptennis@upi')" class="copy-btn"><i class="fas fa-copy"></i></button>
+          </div>
+        </div>
+        <div class="payment-card">
+          <h3><i class="fas fa-university"></i> Bank Details</h3>
+          <div class="bank-details">
+            <div class="bank-row"><span>Account Name:</span><strong>UP Cricket Organization</strong></div>
+            <div class="bank-row"><span>Bank:</span><strong>State Bank of India</strong></div>
+            <div class="bank-row"><span>Account No:</span><strong>1234 5678 9012 <button onclick="copyText('1234567890123456')" class="copy-btn"><i class="fas fa-copy"></i></button></strong></div>
+            <div class="bank-row"><span>IFSC:</span><strong>SBIN0001234 <button onclick="copyText('SBIN0001234')" class="copy-btn"><i class="fas fa-copy"></i></button></strong></div>
+            <div class="bank-row"><span>UPI ID:</span><strong>uptennis@upi <button onclick="copyText('uptennis@upi')" class="copy-btn"><i class="fas fa-copy"></i></button></strong></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Payment Submit Form -->
+      <div class="payment-submit-card" id="paymentSubmitForm">
+        <h3><i class="fas fa-upload"></i> Submit Payment Proof</h3>
+        <p class="info-text">After payment, upload screenshot and enter transaction details below.</p>
+        <div class="form-grid">
+          <div class="form-group">
+            <label>Team ID / Name *</label>
+            <input type="text" id="payTeamId" placeholder="Your Team ID or Name" required />
+          </div>
+          <div class="form-group">
+            <label>UTR / Transaction ID *</label>
+            <input type="text" id="utrNumber" placeholder="Enter UTR/Transaction ID" required />
+          </div>
+          <div class="form-group full-width">
+            <label>Payment Screenshot *</label>
+            <input type="file" id="paymentScreenshot" accept="image/*" required />
+            <div id="screenshotPreview" class="screenshot-preview"></div>
+          </div>
+        </div>
+        <button onclick="submitPayment()" class="btn btn-primary full-btn">
+          <i class="fas fa-check-circle"></i> Submit Payment
+        </button>
+        <p class="pending-note"><i class="fas fa-clock"></i> After submission: "Payment Pending for Admin Approval". Receipt will be generated after approval.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== DISTRICT DETAILS ========== -->
+<section id="districts" class="section-pad">
+  <div class="container">
+    <h2 class="section-title">District <span class="gold">Tournaments</span></h2>
+    <div class="search-bar">
+      <input type="text" id="districtSearch" placeholder="Search district..." oninput="filterDistricts()" />
+      <i class="fas fa-search"></i>
+    </div>
+    <div id="districtCards" class="district-grid">
+      <!-- Populated by JS -->
+    </div>
+  </div>
+</section>
+
+<!-- District Modal -->
+<div id="districtModal" class="modal">
+  <div class="modal-content large-modal">
+    <button class="modal-close" onclick="closeModal('districtModal')">&times;</button>
+    <div id="districtModalContent"></div>
+  </div>
+</div>
+
+<!-- ========== FIXTURES ========== -->
+<section id="fixtures" class="section-pad dark-section">
+  <div class="container">
+    <h2 class="section-title">Match <span class="gold">Fixtures</span></h2>
+    <div class="filter-bar">
+      <select id="fixtureDistrictFilter" onchange="renderFixtures()">
+        <option value="">All Districts</option>
+      </select>
+    </div>
+    <div id="fixturesContainer">
+      <!-- Populated by JS -->
+    </div>
+  </div>
+</section>
+
+<!-- ========== QUALIFIED TEAMS ========== -->
+<section id="qualified" class="section-pad">
+  <div class="container">
+    <h2 class="section-title">Qualified <span class="gold">Teams</span></h2>
+    <p class="section-sub">District Champion teams qualified for State Level Mega Contest</p>
+    <div id="qualifiedTeams" class="teams-grid">
+      <!-- Populated by JS -->
+    </div>
+  </div>
+</section>
+
+<!-- ========== MEGA CONTEST ========== -->
+<section id="mega" class="section-pad dark-section">
+  <div class="container">
+    <h2 class="section-title">State Level <span class="gold">Mega Contest</span></h2>
+    <div id="megaDetails">
+      <!-- Populated by JS -->
+    </div>
+    <div id="megaPrizeSection" class="prize-grid mt-4">
+      <!-- Populated by JS -->
+    </div>
+  </div>
+</section>
+
+<!-- ========== WINNERS ========== -->
+<section id="winners" class="section-pad">
+  <div class="container">
+    <h2 class="section-title">Champions & <span class="gold">Winners</span></h2>
+    <div id="winnersSection">
+      <!-- Populated by JS -->
+    </div>
+  </div>
+</section>
+
+<!-- ========== PRIZES ========== -->
+<section id="prizes" class="section-pad dark-section">
+  <div class="container">
+    <h2 class="section-title">Prizes & <span class="gold">Awards</span></h2>
+    <div id="prizesSection">
+      <!-- Populated by JS -->
+    </div>
+  </div>
+</section>
+
+<!-- ========== CONTACT ========== -->
+<section id="contact" class="section-pad">
+  <div class="container">
+    <h2 class="section-title">Contact <span class="gold">Us</span></h2>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3>Organizer Details</h3>
+        <div class="contact-item"><i class="fas fa-user"></i> <span>UP Cricket Organization</span></div>
+        <div class="contact-item"><i class="fas fa-phone"></i> <a href="tel:+919999999999">+91 99999 99999</a></div>
+        <div class="contact-item"><i class="fab fa-whatsapp"></i> <a href="https://wa.me/919999999999" target="_blank">WhatsApp: +91 99999 99999</a></div>
+        <div class="contact-item"><i class="fas fa-envelope"></i> <a href="mailto:info@upcricket.in">info@upcricket.in</a></div>
+        <div class="contact-item"><i class="fas fa-map-marker-alt"></i> <span>Lucknow, Uttar Pradesh</span></div>
+        <div class="social-links">
+          <a href="#" class="social-btn"><i class="fab fa-facebook"></i></a>
+          <a href="#" class="social-btn"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-btn"><i class="fab fa-youtube"></i></a>
+          <a href="https://wa.me/919999999999" target="_blank" class="social-btn whatsapp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="contact-map">
+        <div class="map-placeholder">
+          <i class="fas fa-map"></i>
+          <p>Lucknow, Uttar Pradesh</p>
+          <a href="https://maps.google.com" target="_blank" class="btn btn-outline">Open in Maps</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== ADMIN PANEL ========== -->
+<section id="admin" class="section-pad dark-section">
+  <div class="container">
+    <h2 class="section-title">Admin <span class="gold">Panel</span></h2>
+
+    <!-- Login -->
+    <div id="adminLogin" class="admin-login-card">
+      <h3><i class="fas fa-lock"></i> Admin Login</h3>
+      <div class="form-group">
+        <label>Username</label>
+        <input type="text" id="adminUser" placeholder="admin" />
+      </div>
+      <div class="form-group">
+        <label>Password</label>
+        <input type="password" id="adminPass" placeholder="••••••••" />
+      </div>
+      <button onclick="adminLogin()" class="btn btn-primary full-btn">
+        <i class="fas fa-sign-in-alt"></i> Login
+      </button>
+    </div>
+
+    <!-- Dashboard -->
+    <div id="adminDashboard" class="hidden">
+      <div class="admin-header">
+        <h3>Welcome, Admin <i class="fas fa-shield-alt gold"></i></h3>
+        <button onclick="adminLogout()" class="btn btn-outline-sm"><i class="fas fa-sign-out-alt"></i> Logout</button>
+      </div>
+
+      <!-- Stat Cards -->
+      <div id="adminStats" class="stats-grid">
+        <!-- JS populated -->
+      </div>
+
+      <!-- Admin Tabs -->
+      <div class="admin-tabs">
+        <button class="tab-btn active" onclick="showAdminTab('teams')"><i class="fas fa-users"></i> Teams</button>
+        <button class="tab-btn" onclick="showAdminTab('districts')"><i class="fas fa-map"></i> Districts</button>
+        <button class="tab-btn" onclick="showAdminTab('fixtures')"><i class="fas fa-calendar"></i> Fixtures</button>
+        <button class="tab-btn" onclick="showAdminTab('prizes')"><i class="fas fa-trophy"></i> Prizes</button>
+        <button class="tab-btn" onclick="showAdminTab('awards')"><i class="fas fa-medal"></i> Awards</button>
+        <button class="tab-btn" onclick="showAdminTab('mega')"><i class="fas fa-star"></i> Mega Contest</button>
+      </div>
+
+      <!-- Teams Tab -->
+      <div id="tab-teams" class="admin-tab-content">
+        <div class="admin-actions">
+          <select id="adminDistrictFilter" onchange="renderAdminTeams()">
+            <option value="">All Districts</option>
+          </select>
+          <select id="adminStatusFilter" onchange="renderAdminTeams()">
+            <option value="">All Status</option>
+            <option value="pending">Pending</option>
+            <option value="approved">Approved</option>
+            <option value="rejected">Rejected</option>
+            <option value="champion">District Champion</option>
+          </select>
+          <input type="text" id="adminTeamSearch" placeholder="Search team..." oninput="renderAdminTeams()" />
+          <button onclick="exportCSV()" class="btn btn-outline-sm"><i class="fas fa-download"></i> Export CSV</button>
+          <button onclick="clearDemoData()" class="btn btn-danger-sm"><i class="fas fa-trash"></i> Clear Data</button>
+        </div>
+        <div id="adminTeamsTable" class="responsive-table"></div>
+      </div>
+
+      <!-- Districts Tab -->
+      <div id="tab-districts" class="admin-tab-content hidden">
+        <button onclick="openDistrictForm()" class="btn btn-primary mb-3"><i class="fas fa-plus"></i> Add/Edit District</button>
+        <div id="adminDistrictList"></div>
+      </div>
+
+      <!-- Fixtures Tab -->
+      <div id="tab-fixtures" class="admin-tab-content hidden">
+        <button onclick="openFixtureForm()" class="btn btn-primary mb-3"><i class="fas fa-plus"></i> Add Fixture</button>
+        <div id="adminFixtureList"></div>
+      </div>
+
+      <!-- Prizes Tab -->
+      <div id="tab-prizes" class="admin-tab-content hidden">
+        <div id="adminPrizesForm"></div>
+      </div>
+
+      <!-- Awards Tab -->
+      <div id="tab-awards" class="admin-tab-content hidden">
+        <button onclick="openAwardForm()" class="btn btn-primary mb-3"><i class="fas fa-plus"></i> Add Award</button>
+        <div id="adminAwardsList"></div>
+      </div>
+
+      <!-- Mega Contest Tab -->
+      <div id="tab-mega" class="admin-tab-content hidden">
+        <div id="adminMegaForm"></div>
+      </div>
+
+      <p class="demo-note"><i class="fas fa-info-circle"></i> This is a static GitHub Pages demo. For real secure payment approval and database, use Firebase or backend server.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========== RECEIPT MODAL ========== -->
+<div id="receiptModal" class="modal">
+  <div class="modal-content">
+    <button class="modal-close" onclick="closeModal('receiptModal')">&times;</button>
+    <div id="receiptContent"></div>
+    <div class="receipt-btns">
+      <button onclick="downloadPDF()" class="btn btn-primary"><i class="fas fa-download"></i> Download PDF</button>
+      <button onclick="printReceipt()" class="btn btn-outline"><i class="fas fa-print"></i> Print</button>
+      <button onclick="shareWhatsApp()" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> Share</button>
+    </div>
+  </div>
+</div>
+
+<!-- Generic Modal -->
+<div id="genericModal" class="modal">
+  <div class="modal-content large-modal">
+    <button class="modal-close" onclick="closeModal('genericModal')">&times;</button>
+    <div id="genericModalContent"></div>
+  </div>
+</div>
+
+<!-- ========== FLOATING WHATSAPP ========== -->
+<a href="https://wa.me/919999999999" target="_blank" class="whatsapp-float" aria-label="WhatsApp">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<!-- Back to Top -->
+<button id="backToTop" class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  <i class="fas fa-chevron-up"></i>
+</button>
+
+<!-- ========== FOOTER ========== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo"><i class="fas fa-baseball-ball"></i> UP Cricket</div>
+        <p>Uttar Pradesh Tennis Ball Cricket Tournament — Bringing champions from every district together.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#register">Register Team</a></li>
+          <li><a href="#districts">Districts</a></li>
+          <li><a href="#fixtures">Fixtures</a></li>
+          <li><a href="#prizes">Prizes</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p><i class="fas fa-phone"></i> +91 99999 99999</p>
+        <p><i class="fab fa-whatsapp"></i> WhatsApp Available</p>
+        <p><i class="fas fa-envelope"></i> info@upcricket.in</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 UP Tennis Ball Cricket Tournament. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
