@@ -4,9 +4,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Uttar Pradesh Tennis Ball Cricket Tournament - Har district ka tournament, har district se ek champion. Register your team now!" />
-  <meta name="keywords" content="UP Cricket Tournament, Tennis Ball Cricket, Uttar Pradesh Cricket, District Cricket Tournament" />
-  <title>UP Tennis Ball Cricket Tournament 2025</title>
+  <meta name="description" content="उत्तर प्रदेश टेनिस बॉल क्रिकेट टूर्नामेंट - हर जिले का टूर्नामेंट, हर जिले से एक चैंपियन। अभी अपनी टीम रजिस्टर करें!" />
+  <meta name="keywords" content="UP Cricket Tournament, Tennis Ball Cricket, Uttar Pradesh Cricket, District Cricket Tournament, यूपी क्रिकेट टूर्नामेंट" />
+  <title>यूपी टेनिस बॉल क्रिकेट टूर्नामेंट 2025</title>
 
   <!-- Font Awesome CDN -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
@@ -19,171 +19,171 @@
 </head>
 <body>
 
-  <!-- ===== NAVBAR ===== -->
+  <!-- ===== नेवबार ===== -->
   <nav class="navbar" id="navbar">
     <div class="nav-container">
       <div class="nav-logo">
         <i class="fas fa-cricket-ball"></i>
-        <span>UP Cricket</span>
-        <span class="logo-sub">Tournament</span>
+        <span>यूपी क्रिकेट</span>
+        <span class="logo-sub">टूर्नामेंट</span>
       </div>
-      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <button class="hamburger" id="hamburger" aria-label="मेनू खोलें">
         <span></span><span></span><span></span>
       </button>
       <ul class="nav-links" id="navLinks">
-        <li><a href="#home" class="nav-link active">Home</a></li>
-        <li><a href="#registration" class="nav-link">Registration</a></li>
-        <li><a href="#payment" class="nav-link">Payment</a></li>
-        <li><a href="#districts" class="nav-link">Districts</a></li>
-        <li><a href="#prizes" class="nav-link">Prizes</a></li>
-        <li><a href="#contact" class="nav-link">Contact</a></li>
-        <li><a href="#admin" class="nav-link admin-link">Admin</a></li>
+        <li><a href="#home" class="nav-link active">होम</a></li>
+        <li><a href="#registration" class="nav-link">रजिस्ट्रेशन</a></li>
+        <li><a href="#payment" class="nav-link">पेमेंट</a></li>
+        <li><a href="#districts" class="nav-link">जिले</a></li>
+        <li><a href="#prizes" class="nav-link">पुरस्कार</a></li>
+        <li><a href="#contact" class="nav-link">संपर्क</a></li>
+        <li><a href="#admin" class="nav-link admin-link">एडमिन</a></li>
       </ul>
     </div>
   </nav>
 
-  <!-- ===== NOTICE BANNER ===== -->
+  <!-- ===== नोटिस बैनर ===== -->
   <div class="notice-banner">
     <i class="fas fa-bullhorn"></i>
-    <marquee>🏏 Tournament July se shuru hoga. District-wise fixtures, score aur winners tournament start hone ke baad update kiye jayenge. Registration abhi open hai! &nbsp;&nbsp;&nbsp; 🏆 Entry Fee: ₹2100 per team &nbsp;&nbsp;&nbsp; 📱 WhatsApp: +91-9876543210</marquee>
+    <marquee>🏏 टूर्नामेंट जुलाई से शुरू होगा। जिलेवार फिक्सचर, स्कोर और विजेता टूर्नामेंट शुरू होने के बाद अपडेट किए जाएंगे। रजिस्ट्रेशन अभी खुला है! &nbsp;&nbsp;&nbsp; 🏆 प्रवेश शुल्क: ₹2100 प्रति टीम &nbsp;&nbsp;&nbsp; 📱 व्हाट्सएप: +91-9876543210</marquee>
   </div>
 
-  <!-- ===== HOME SECTION ===== -->
+  <!-- ===== होम सेक्शन ===== -->
   <section id="home" class="hero-section">
     <div class="hero-bg-overlay"></div>
     <div class="stadium-lines"></div>
     <div class="hero-content">
-      <div class="hero-badge"><i class="fas fa-star"></i> Season 2025</div>
-      <h1 class="hero-title">Uttar Pradesh<br/><span class="gold-text">Tennis Ball Cricket</span><br/>Tournament</h1>
-      <p class="hero-sub">Har district ka tournament, har district se ek champion,<br/>fir <strong>State Level Mega Contest</strong></p>
+      <div class="hero-badge"><i class="fas fa-star"></i> सीजन 2025</div>
+      <h1 class="hero-title">उत्तर प्रदेश<br/><span class="gold-text">टेनिस बॉल क्रिकेट</span><br/>टूर्नामेंट</h1>
+      <p class="hero-sub">हर जिले का टूर्नामेंट, हर जिले से एक चैंपियन,<br/>फिर <strong>स्टेट लेवल मेगा कॉन्टेस्ट</strong></p>
       <div class="entry-fee-badge">
-        <span class="fee-label">Entry Fee</span>
+        <span class="fee-label">प्रवेश शुल्क</span>
         <span class="fee-amount">₹2,100</span>
-        <span class="fee-sub">per team</span>
+        <span class="fee-sub">प्रति टीम</span>
       </div>
       <div class="hero-buttons">
         <button class="btn btn-primary" onclick="scrollTo('registration')">
-          <i class="fas fa-user-plus"></i> Register Team
+          <i class="fas fa-user-plus"></i> टीम रजिस्टर करें
         </button>
         <button class="btn btn-outline" onclick="scrollTo('districts')">
-          <i class="fas fa-map-marker-alt"></i> District Details
+          <i class="fas fa-map-marker-alt"></i> जिला विवरण
         </button>
         <button class="btn btn-whatsapp" onclick="openWhatsApp()">
-          <i class="fab fa-whatsapp"></i> WhatsApp
+          <i class="fab fa-whatsapp"></i> व्हाट्सएप
         </button>
       </div>
     </div>
     <div class="hero-scroll-hint"><i class="fas fa-chevron-down"></i></div>
   </section>
 
-  <!-- ===== PRIZE HIGHLIGHT CARDS ===== -->
+  <!-- ===== पुरस्कार हाइलाइट ===== -->
   <section class="prize-highlights">
     <div class="container">
       <div class="section-title">
-        <h2>Prize Highlights</h2>
-        <p>Jeeto aur apne district ka naam roshan karo</p>
+        <h2>पुरस्कार झलक</h2>
+        <p>जीतो और अपने जिले का नाम रोशन करो</p>
       </div>
       <div class="prize-cards-row" id="prizeHighlightCards">
-        <!-- Filled by JS -->
+        <!-- JS द्वारा भरा जाएगा -->
       </div>
     </div>
   </section>
 
-  <!-- ===== TOURNAMENT INFO ===== -->
+  <!-- ===== टूर्नामेंट जानकारी ===== -->
   <section class="tournament-info">
     <div class="container">
       <div class="section-title">
-        <h2>Tournament Format</h2>
-        <p>Kaise hoga tournament, jaano poori jankari</p>
+        <h2>टूर्नामेंट फॉर्मेट</h2>
+        <p>कैसे होगा टूर्नामेंट, जानो पूरी जानकारी</p>
       </div>
       <div class="info-grid">
         <div class="info-card">
           <div class="info-icon"><i class="fas fa-map-marked-alt"></i></div>
-          <h3>District Level</h3>
-          <p>UP ke har district mein alag tournament hoga. Teams apne district se entry karengi.</p>
+          <h3>जिला स्तर</h3>
+          <p>उत्तर प्रदेश के हर जिले में अलग टूर्नामेंट होगा। टीमें अपने जिले से एंट्री करेंगी।</p>
         </div>
         <div class="info-card">
           <div class="info-icon"><i class="fas fa-trophy"></i></div>
-          <h3>District Champions</h3>
-          <p>Har district ka winner future mein State Level Mega Contest mein participate karega.</p>
+          <h3>जिला चैंपियन</h3>
+          <p>हर जिले का विजेता भविष्य में स्टेट लेवल मेगा कॉन्टेस्ट में भाग लेगा।</p>
         </div>
         <div class="info-card">
           <div class="info-icon"><i class="fas fa-crown"></i></div>
-          <h3>State Mega Contest</h3>
-          <p>State Level Mega Contest mein sabhi district champions compete karenge. Grand prize awaits!</p>
+          <h3>स्टेट मेगा कॉन्टेस्ट</h3>
+          <p>स्टेट लेवल मेगा कॉन्टेस्ट में सभी जिला चैंपियन प्रतिस्पर्धा करेंगे। भव्य पुरस्कार मिलेगा!</p>
         </div>
         <div class="info-card">
           <div class="info-icon"><i class="fas fa-cricket-ball"></i></div>
-          <h3>Tennis Ball Format</h3>
-          <p>Tennis ball format mein exciting matches. Fair play aur sportsmanship sabse pehle.</p>
+          <h3>टेनिस बॉल फॉर्मेट</h3>
+          <p>टेनिस बॉल फॉर्मेट में रोमांचक मैच। फेयर प्ले और खेल भावना सबसे पहले।</p>
         </div>
       </div>
       <div class="coming-soon-banner">
         <i class="fas fa-clock"></i>
-        <span>Tournament July se shuru hoga. Score aur result baad mein update honge.</span>
+        <span>टूर्नामेंट जुलाई से शुरू होगा। स्कोर और परिणाम बाद में अपडेट होंगे।</span>
       </div>
     </div>
   </section>
 
-  <!-- ===== RULES SECTION ===== -->
+  <!-- ===== नियम सेक्शन ===== -->
   <section class="rules-section">
     <div class="container">
       <div class="section-title">
-        <h2>Tournament Rules</h2>
-        <p>Khelne se pehle rules zaroor padhein</p>
+        <h2>टूर्नामेंट नियम</h2>
+        <p>खेलने से पहले नियम जरूर पढ़ें</p>
       </div>
       <div class="rules-grid">
-        <div class="rule-item"><i class="fas fa-check-circle"></i><span>Team mein minimum 11 aur maximum 15 players hone chahiye.</span></div>
-        <div class="rule-item"><i class="fas fa-check-circle"></i><span>Sirf tennis ball use hogi. Hard ball allowed nahi hai.</span></div>
-        <div class="rule-item"><i class="fas fa-check-circle"></i><span>Teams apne district ki hi tournament mein participate kar sakti hain.</span></div>
-        <div class="rule-item"><i class="fas fa-check-circle"></i><span>Entry fee ₹2100 non-refundable hai.</span></div>
-        <div class="rule-item"><i class="fas fa-check-circle"></i><span>Proper jersey aur ID proof match ke din compulsory hai.</span></div>
-        <div class="rule-item"><i class="fas fa-check-circle"></i><span>Umpire ka decision final hoga. Koi argument allowed nahi.</span></div>
-        <div class="rule-item"><i class="fas fa-check-circle"></i><span>Match mein indiscipline pe team disqualify ho sakti hai.</span></div>
-        <div class="rule-item"><i class="fas fa-check-circle"></i><span>Registration ke baad payment confirmation zaroor karein.</span></div>
+        <div class="rule-item"><i class="fas fa-check-circle"></i><span>टीम में न्यूनतम 11 और अधिकतम 15 खिलाड़ी होने चाहिए।</span></div>
+        <div class="rule-item"><i class="fas fa-check-circle"></i><span>सिर्फ टेनिस बॉल का उपयोग होगा। हार्ड बॉल की अनुमति नहीं है।</span></div>
+        <div class="rule-item"><i class="fas fa-check-circle"></i><span>टीमें केवल अपने जिले के टूर्नामेंट में भाग ले सकती हैं।</span></div>
+        <div class="rule-item"><i class="fas fa-check-circle"></i><span>प्रवेश शुल्क ₹2100 वापस नहीं होगा (नॉन-रिफंडेबल)।</span></div>
+        <div class="rule-item"><i class="fas fa-check-circle"></i><span>मैच के दिन उचित जर्सी और आईडी प्रूफ अनिवार्य है।</span></div>
+        <div class="rule-item"><i class="fas fa-check-circle"></i><span>अंपायर का निर्णय अंतिम होगा। किसी भी प्रकार का विवाद मान्य नहीं।</span></div>
+        <div class="rule-item"><i class="fas fa-check-circle"></i><span>मैच में अनुशासनहीनता पर टीम को अयोग्य घोषित किया जा सकता है।</span></div>
+        <div class="rule-item"><i class="fas fa-check-circle"></i><span>रजिस्ट्रेशन के बाद पेमेंट कन्फर्मेशन जरूर करें।</span></div>
       </div>
     </div>
   </section>
 
-  <!-- ===== REGISTRATION SECTION ===== -->
+  <!-- ===== रजिस्ट्रेशन सेक्शन ===== -->
   <section id="registration" class="registration-section">
     <div class="container">
       <div class="section-title">
-        <h2>Team Registration</h2>
-        <p>Apni team register karein aur tournament ka hissa banein</p>
+        <h2>टीम रजिस्ट्रेशन</h2>
+        <p>अपनी टीम रजिस्टर करें और टूर्नामेंट का हिस्सा बनें</p>
       </div>
       <div class="form-wrapper">
         <form id="registrationForm" novalidate>
           <div class="form-grid">
             <div class="form-group">
-              <label><i class="fas fa-shield-alt"></i> Team Name *</label>
-              <input type="text" id="teamName" placeholder="Apni team ka naam likhein" required />
+              <label><i class="fas fa-shield-alt"></i> टीम का नाम *</label>
+              <input type="text" id="teamName" placeholder="अपनी टीम का नाम लिखें" required />
               <span class="error-msg" id="err-teamName"></span>
             </div>
             <div class="form-group">
-              <label><i class="fas fa-user"></i> Captain Name *</label>
-              <input type="text" id="captainName" placeholder="Captain ka naam" required />
+              <label><i class="fas fa-user"></i> कप्तान का नाम *</label>
+              <input type="text" id="captainName" placeholder="कप्तान का पूरा नाम" required />
               <span class="error-msg" id="err-captainName"></span>
             </div>
             <div class="form-group">
-              <label><i class="fas fa-phone"></i> Mobile Number *</label>
-              <input type="tel" id="mobileNo" placeholder="10-digit mobile number" maxlength="10" required />
+              <label><i class="fas fa-phone"></i> मोबाइल नंबर *</label>
+              <input type="tel" id="mobileNo" placeholder="10 अंक का मोबाइल नंबर" maxlength="10" required />
               <span class="error-msg" id="err-mobileNo"></span>
             </div>
             <div class="form-group">
-              <label><i class="fab fa-whatsapp"></i> WhatsApp Number *</label>
-              <input type="tel" id="whatsappNo" placeholder="WhatsApp number" maxlength="10" required />
+              <label><i class="fab fa-whatsapp"></i> व्हाट्सएप नंबर *</label>
+              <input type="tel" id="whatsappNo" placeholder="व्हाट्सएप नंबर" maxlength="10" required />
               <span class="error-msg" id="err-whatsappNo"></span>
             </div>
             <div class="form-group">
-              <label><i class="fas fa-envelope"></i> Email</label>
-              <input type="email" id="email" placeholder="Email address (optional)" />
+              <label><i class="fas fa-envelope"></i> ईमेल</label>
+              <input type="email" id="email" placeholder="ईमेल पता (वैकल्पिक)" />
               <span class="error-msg" id="err-email"></span>
             </div>
             <div class="form-group">
-              <label><i class="fas fa-map-marker-alt"></i> District *</label>
+              <label><i class="fas fa-map-marker-alt"></i> जिला *</label>
               <select id="district" required>
-                <option value="">-- District chunein --</option>
+                <option value="">-- जिला चुनें --</option>
                 <option>Agra</option><option>Aligarh</option><option>Ambedkar Nagar</option>
                 <option>Amethi</option><option>Amroha</option><option>Auraiya</option>
                 <option>Ayodhya</option><option>Azamgarh</option><option>Baghpat</option>
@@ -213,196 +213,194 @@
               <span class="error-msg" id="err-district"></span>
             </div>
             <div class="form-group">
-              <label><i class="fas fa-city"></i> Village / City *</label>
-              <input type="text" id="city" placeholder="Gaon ya shahar ka naam" required />
+              <label><i class="fas fa-city"></i> गाँव / शहर *</label>
+              <input type="text" id="city" placeholder="गाँव या शहर का नाम" required />
               <span class="error-msg" id="err-city"></span>
             </div>
             <div class="form-group">
-              <label><i class="fas fa-users"></i> Total Players *</label>
-              <input type="number" id="totalPlayers" placeholder="11-15" min="11" max="15" required />
+              <label><i class="fas fa-users"></i> कुल खिलाड़ी *</label>
+              <input type="number" id="totalPlayers" placeholder="11 से 15" min="11" max="15" required />
               <span class="error-msg" id="err-totalPlayers"></span>
             </div>
             <div class="form-group full-width">
-              <label><i class="fas fa-list"></i> Player Names *</label>
-              <textarea id="playerNames" rows="4" placeholder="Sabhi players ke naam likhein (ek naam ek line mein)" required></textarea>
+              <label><i class="fas fa-list"></i> खिलाड़ियों के नाम *</label>
+              <textarea id="playerNames" rows="4" placeholder="सभी खिलाड़ियों के नाम लिखें (एक नाम एक लाइन में)" required></textarea>
               <span class="error-msg" id="err-playerNames"></span>
             </div>
             <div class="form-group">
-              <label><i class="fas fa-tshirt"></i> Jersey Color *</label>
-              <input type="text" id="jerseyColor" placeholder="Jersey ka rang" required />
+              <label><i class="fas fa-tshirt"></i> जर्सी का रंग *</label>
+              <input type="text" id="jerseyColor" placeholder="जर्सी का रंग" required />
               <span class="error-msg" id="err-jerseyColor"></span>
             </div>
             <div class="form-group">
-              <label><i class="fas fa-image"></i> Team Logo (Optional)</label>
+              <label><i class="fas fa-image"></i> टीम लोगो (वैकल्पिक)</label>
               <input type="file" id="teamLogo" accept="image/*" />
             </div>
           </div>
           <div class="terms-row">
             <label class="checkbox-label">
               <input type="checkbox" id="terms" required />
-              <span>Main tournament ke sabhi rules aur terms & conditions se agree karta/karti hoon. Entry fee ₹2100 non-refundable hai.</span>
+              <span>मैं टूर्नामेंट के सभी नियमों और शर्तों से सहमत हूँ। प्रवेश शुल्क ₹2100 वापस नहीं होगा।</span>
             </label>
             <span class="error-msg" id="err-terms"></span>
           </div>
           <button type="submit" class="btn btn-primary btn-full">
-            <i class="fas fa-paper-plane"></i> Register Team & Proceed to Payment
+            <i class="fas fa-paper-plane"></i> टीम रजिस्टर करें और पेमेंट करें
           </button>
         </form>
       </div>
     </div>
   </section>
 
-  <!-- ===== PAYMENT SECTION ===== -->
+  <!-- ===== पेमेंट सेक्शन ===== -->
   <section id="payment" class="payment-section">
     <div class="container">
       <div class="section-title">
-        <h2>Payment</h2>
-        <p>Registration ke baad payment karein aur confirmation paayein</p>
+        <h2>पेमेंट</h2>
+        <p>रजिस्ट्रेशन के बाद पेमेंट करें और कन्फर्मेशन पाएं</p>
       </div>
 
-      <!-- Payment Info (visible always) -->
       <div class="payment-info-grid">
         <div class="payment-card">
           <div class="payment-amount">
-            <span class="pay-label">Entry Fee</span>
+            <span class="pay-label">प्रवेश शुल्क</span>
             <span class="pay-amt">₹2,100</span>
-            <span class="pay-note">per team (Non-refundable)</span>
+            <span class="pay-note">प्रति टीम (वापस नहीं होगा)</span>
           </div>
         </div>
         <div class="payment-methods">
-          <h3><i class="fas fa-qrcode"></i> Payment Options</h3>
+          <h3><i class="fas fa-qrcode"></i> पेमेंट विकल्प</h3>
           <div class="qr-placeholder">
             <i class="fas fa-qrcode"></i>
-            <span>QR Code</span>
-            <small>Scan karo aur pay karo</small>
+            <span>QR कोड</span>
+            <small>स्कैन करो और पे करो</small>
           </div>
           <div class="bank-details">
-            <div class="bank-row"><span class="bank-label">Account Holder:</span><span class="bank-val">UP Cricket Tournament</span></div>
-            <div class="bank-row"><span class="bank-label">Bank Name:</span><span class="bank-val">State Bank of India</span></div>
-            <div class="bank-row"><span class="bank-label">Account No:</span><span class="bank-val">1234567890123</span></div>
-            <div class="bank-row"><span class="bank-label">IFSC Code:</span><span class="bank-val">SBIN0001234</span></div>
+            <div class="bank-row"><span class="bank-label">खाताधारक नाम:</span><span class="bank-val">UP Cricket Tournament</span></div>
+            <div class="bank-row"><span class="bank-label">बैंक का नाम:</span><span class="bank-val">State Bank of India</span></div>
+            <div class="bank-row"><span class="bank-label">खाता नंबर:</span><span class="bank-val">1234567890123</span></div>
+            <div class="bank-row"><span class="bank-label">IFSC कोड:</span><span class="bank-val">SBIN0001234</span></div>
             <div class="bank-row"><span class="bank-label">UPI ID:</span><span class="bank-val upi-id">upcricket@sbi</span></div>
           </div>
         </div>
       </div>
 
-      <!-- Payment Form -->
       <div class="form-wrapper" id="paymentFormWrap">
-        <h3 class="sub-heading"><i class="fas fa-upload"></i> Payment Confirmation Submit Karein</h3>
+        <h3 class="sub-heading"><i class="fas fa-upload"></i> पेमेंट कन्फर्मेशन जमा करें</h3>
         <div id="paymentStatus" class="payment-status-msg" style="display:none;"></div>
         <form id="paymentForm" novalidate>
           <div class="form-group">
-            <label><i class="fas fa-id-badge"></i> Team ID / Team Name *</label>
-            <input type="text" id="payTeamId" placeholder="Aapka Team ID ya Team Name" required />
+            <label><i class="fas fa-id-badge"></i> टीम आईडी / टीम का नाम *</label>
+            <input type="text" id="payTeamId" placeholder="आपका टीम आईडी या टीम का नाम" required />
             <span class="error-msg" id="err-payTeamId"></span>
           </div>
           <div class="form-group">
-            <label><i class="fas fa-receipt"></i> UTR / Transaction ID *</label>
-            <input type="text" id="utrId" placeholder="Bank transaction UTR number" required />
+            <label><i class="fas fa-receipt"></i> UTR / ट्रांजेक्शन आईडी *</label>
+            <input type="text" id="utrId" placeholder="बैंक ट्रांजेक्शन UTR नंबर" required />
             <span class="error-msg" id="err-utrId"></span>
           </div>
           <div class="form-group">
-            <label><i class="fas fa-image"></i> Payment Screenshot *</label>
+            <label><i class="fas fa-image"></i> पेमेंट स्क्रीनशॉट *</label>
             <input type="file" id="paymentScreenshot" accept="image/*" required />
             <span class="error-msg" id="err-paymentScreenshot"></span>
           </div>
           <button type="submit" class="btn btn-primary btn-full">
-            <i class="fas fa-check-circle"></i> Submit Payment for Approval
+            <i class="fas fa-check-circle"></i> पेमेंट अप्रूवल के लिए जमा करें
           </button>
         </form>
         <div class="pending-note">
           <i class="fas fa-info-circle"></i>
-          <span>Payment admin approval ke baad confirm hogi. Receipt approval ke baad generate hogi.</span>
+          <span>पेमेंट एडमिन अप्रूवल के बाद कन्फर्म होगी। रसीद अप्रूवल के बाद मिलेगी।</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== DISTRICTS SECTION ===== -->
+  <!-- ===== जिले सेक्शन ===== -->
   <section id="districts" class="districts-section">
     <div class="container">
       <div class="section-title">
-        <h2>District Tournament Details</h2>
-        <p>Apne district ka tournament kab aur kahan hoga</p>
+        <h2>जिला टूर्नामेंट विवरण</h2>
+        <p>अपने जिले का टूर्नामेंट कब और कहाँ होगा</p>
       </div>
       <div class="district-search-row">
-        <input type="text" id="districtSearch" placeholder="District search karein..." />
+        <input type="text" id="districtSearch" placeholder="जिला खोजें..." />
         <i class="fas fa-search"></i>
       </div>
       <div id="districtCards" class="district-cards-grid">
-        <!-- Filled by JS -->
+        <!-- JS द्वारा भरा जाएगा -->
       </div>
       <div class="coming-soon-banner">
         <i class="fas fa-calendar-alt"></i>
-        <span>Tournament July se shuru hoga. District details admin dwara update ki jayengi.</span>
+        <span>टूर्नामेंट जुलाई से शुरू होगा। जिला विवरण एडमिन द्वारा अपडेट किए जाएंगे।</span>
       </div>
     </div>
   </section>
 
-  <!-- ===== PRIZES SECTION ===== -->
+  <!-- ===== पुरस्कार सेक्शन ===== -->
   <section id="prizes" class="prizes-section">
     <div class="container">
       <div class="section-title">
-        <h2>Prizes & Awards</h2>
-        <p>Jeeto aur cash, trophies aur bikes le jao!</p>
+        <h2>पुरस्कार एवं सम्मान</h2>
+        <p>जीतो और नकद, ट्रॉफी और बाइक ले जाओ!</p>
       </div>
       <div id="prizeContent">
-        <!-- Filled by JS -->
+        <!-- JS द्वारा भरा जाएगा -->
       </div>
 
-      <!-- Awards Section -->
+      <!-- विशेष पुरस्कार -->
       <div class="awards-section">
-        <h3 class="awards-title"><i class="fas fa-medal"></i> Special Awards</h3>
+        <h3 class="awards-title"><i class="fas fa-medal"></i> विशेष पुरस्कार</h3>
         <div class="awards-grid">
-          <div class="award-card"><i class="fas fa-star"></i><span>Man of the Match</span></div>
-          <div class="award-card"><i class="fas fa-crown"></i><span>Man of Tournament</span></div>
-          <div class="award-card"><i class="fas fa-baseball-ball"></i><span>Best Batsman</span></div>
-          <div class="award-card"><i class="fas fa-bowling-ball"></i><span>Best Bowler</span></div>
-          <div class="award-card"><i class="fas fa-running"></i><span>Best Fielder</span></div>
-          <div class="award-card"><i class="fas fa-hands"></i><span>Best Catch</span></div>
-          <div class="award-card"><i class="fas fa-seedling"></i><span>Emerging Player</span></div>
+          <div class="award-card"><i class="fas fa-star"></i><span>मैन ऑफ द मैच</span></div>
+          <div class="award-card"><i class="fas fa-crown"></i><span>मैन ऑफ टूर्नामेंट</span></div>
+          <div class="award-card"><i class="fas fa-baseball-ball"></i><span>सर्वश्रेष्ठ बल्लेबाज</span></div>
+          <div class="award-card"><i class="fas fa-bowling-ball"></i><span>सर्वश्रेष्ठ गेंदबाज</span></div>
+          <div class="award-card"><i class="fas fa-running"></i><span>सर्वश्रेष्ठ क्षेत्ररक्षक</span></div>
+          <div class="award-card"><i class="fas fa-hands"></i><span>सर्वश्रेष्ठ कैच</span></div>
+          <div class="award-card"><i class="fas fa-seedling"></i><span>उभरता खिलाड़ी</span></div>
         </div>
         <div class="awards-notice">
           <i class="fas fa-clock"></i>
-          <span>Awards will be announced during the tournament. Player names will be updated after tournament begins.</span>
+          <span>पुरस्कार टूर्नामेंट के दौरान घोषित किए जाएंगे। टूर्नामेंट शुरू होने के बाद खिलाड़ियों के नाम अपडेट होंगे।</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== CONTACT SECTION ===== -->
+  <!-- ===== संपर्क सेक्शन ===== -->
   <section id="contact" class="contact-section">
     <div class="container">
       <div class="section-title">
-        <h2>Contact Us</h2>
-        <p>Koi sawaal ho? Hum se baat karein</p>
+        <h2>संपर्क करें</h2>
+        <p>कोई सवाल हो? हमसे बात करें</p>
       </div>
       <div class="contact-grid">
         <div class="contact-info-card">
-          <div class="contact-item"><i class="fas fa-user-tie"></i><div><strong>Organizer</strong><span>UP Cricket Tournament Committee</span></div></div>
-          <div class="contact-item"><i class="fas fa-phone"></i><div><strong>Phone</strong><span><a href="tel:+919876543210">+91-9876543210</a></span></div></div>
-          <div class="contact-item"><i class="fab fa-whatsapp"></i><div><strong>WhatsApp</strong><span><a href="https://wa.me/919876543210" target="_blank">+91-9876543210</a></span></div></div>
-          <div class="contact-item"><i class="fas fa-envelope"></i><div><strong>Email</strong><span><a href="mailto:upcricket2025@gmail.com">upcricket2025@gmail.com</a></span></div></div>
-          <div class="contact-item"><i class="fas fa-map-marker-alt"></i><div><strong>Address</strong><span>Uttar Pradesh, India</span></div></div>
-          <div class="contact-item"><i class="fas fa-globe"></i><div><strong>Map</strong><span><a href="https://maps.google.com" target="_blank">View on Google Maps</a></span></div></div>
+          <div class="contact-item"><i class="fas fa-user-tie"></i><div><strong>आयोजक</strong><span>यूपी क्रिकेट टूर्नामेंट समिति</span></div></div>
+          <div class="contact-item"><i class="fas fa-phone"></i><div><strong>फोन</strong><span><a href="tel:+919876543210">+91-9876543210</a></span></div></div>
+          <div class="contact-item"><i class="fab fa-whatsapp"></i><div><strong>व्हाट्सएप</strong><span><a href="https://wa.me/919876543210" target="_blank">+91-9876543210</a></span></div></div>
+          <div class="contact-item"><i class="fas fa-envelope"></i><div><strong>ईमेल</strong><span><a href="mailto:upcricket2025@gmail.com">upcricket2025@gmail.com</a></span></div></div>
+          <div class="contact-item"><i class="fas fa-map-marker-alt"></i><div><strong>पता</strong><span>उत्तर प्रदेश, भारत</span></div></div>
+          <div class="contact-item"><i class="fas fa-globe"></i><div><strong>नक्शा</strong><span><a href="https://maps.google.com" target="_blank">गूगल मैप पर देखें</a></span></div></div>
         </div>
         <div class="contact-form-card">
-          <h3>Send Message</h3>
+          <h3>संदेश भेजें</h3>
           <form id="contactForm">
             <div class="form-group">
-              <label>Your Name</label>
-              <input type="text" id="contactName" placeholder="Aapka naam" />
+              <label>आपका नाम</label>
+              <input type="text" id="contactName" placeholder="आपका नाम" />
             </div>
             <div class="form-group">
-              <label>Mobile Number</label>
-              <input type="tel" id="contactMobile" placeholder="Mobile number" maxlength="10" />
+              <label>मोबाइल नंबर</label>
+              <input type="tel" id="contactMobile" placeholder="मोबाइल नंबर" maxlength="10" />
             </div>
             <div class="form-group">
-              <label>Message</label>
-              <textarea id="contactMsg" rows="4" placeholder="Apna message likhein..."></textarea>
+              <label>संदेश</label>
+              <textarea id="contactMsg" rows="4" placeholder="अपना संदेश लिखें..."></textarea>
             </div>
             <button type="submit" class="btn btn-primary btn-full">
-              <i class="fab fa-whatsapp"></i> WhatsApp Par Send Karein
+              <i class="fab fa-whatsapp"></i> व्हाट्सएप पर भेजें
             </button>
           </form>
         </div>
@@ -410,62 +408,62 @@
     </div>
   </section>
 
-  <!-- ===== ADMIN SECTION ===== -->
+  <!-- ===== एडमिन सेक्शन ===== -->
   <section id="admin" class="admin-section">
     <div class="container">
       <div class="section-title">
-        <h2>Admin Panel</h2>
-        <p>Tournament management ke liye admin login karein</p>
+        <h2>एडमिन पैनल</h2>
+        <p>टूर्नामेंट प्रबंधन के लिए एडमिन लॉगिन करें</p>
       </div>
 
-      <!-- Admin Login -->
+      <!-- एडमिन लॉगिन -->
       <div id="adminLogin" class="admin-login-wrap">
         <div class="admin-login-card">
           <div class="admin-login-icon"><i class="fas fa-user-shield"></i></div>
-          <h3>Admin Login</h3>
+          <h3>एडमिन लॉगिन</h3>
           <div class="form-group">
-            <label>Username</label>
+            <label>यूजरनेम</label>
             <input type="text" id="adminUser" placeholder="admin" />
           </div>
           <div class="form-group">
-            <label>Password</label>
-            <input type="password" id="adminPass" placeholder="password" />
+            <label>पासवर्ड</label>
+            <input type="password" id="adminPass" placeholder="पासवर्ड" />
           </div>
           <button class="btn btn-primary btn-full" onclick="adminLogin()">
-            <i class="fas fa-sign-in-alt"></i> Login
+            <i class="fas fa-sign-in-alt"></i> लॉगिन करें
           </button>
-          <p class="demo-note">Demo: admin / admin123</p>
+          <p class="demo-note">डेमो: admin / admin123</p>
         </div>
       </div>
 
-      <!-- Admin Dashboard -->
+      <!-- एडमिन डैशबोर्ड -->
       <div id="adminDashboard" class="admin-dashboard" style="display:none;">
         <div class="admin-header">
-          <h3><i class="fas fa-tachometer-alt"></i> Admin Dashboard</h3>
-          <button class="btn btn-sm btn-danger" onclick="adminLogout()"><i class="fas fa-sign-out-alt"></i> Logout</button>
+          <h3><i class="fas fa-tachometer-alt"></i> एडमिन डैशबोर्ड</h3>
+          <button class="btn btn-sm btn-danger" onclick="adminLogout()"><i class="fas fa-sign-out-alt"></i> लॉगआउट</button>
         </div>
 
-        <!-- Stats Cards -->
+        <!-- स्टैट्स कार्ड -->
         <div class="stats-grid" id="statsGrid">
-          <div class="stat-card"><i class="fas fa-users"></i><div><span class="stat-num" id="statTotal">0</span><span class="stat-label">Total Teams</span></div></div>
-          <div class="stat-card pending"><i class="fas fa-clock"></i><div><span class="stat-num" id="statPending">0</span><span class="stat-label">Pending</span></div></div>
-          <div class="stat-card approved"><i class="fas fa-check-circle"></i><div><span class="stat-num" id="statApproved">0</span><span class="stat-label">Approved</span></div></div>
-          <div class="stat-card rejected"><i class="fas fa-times-circle"></i><div><span class="stat-num" id="statRejected">0</span><span class="stat-label">Rejected</span></div></div>
+          <div class="stat-card"><i class="fas fa-users"></i><div><span class="stat-num" id="statTotal">0</span><span class="stat-label">कुल टीमें</span></div></div>
+          <div class="stat-card pending"><i class="fas fa-clock"></i><div><span class="stat-num" id="statPending">0</span><span class="stat-label">लंबित</span></div></div>
+          <div class="stat-card approved"><i class="fas fa-check-circle"></i><div><span class="stat-num" id="statApproved">0</span><span class="stat-label">स्वीकृत</span></div></div>
+          <div class="stat-card rejected"><i class="fas fa-times-circle"></i><div><span class="stat-num" id="statRejected">0</span><span class="stat-label">अस्वीकृत</span></div></div>
         </div>
 
-        <!-- Admin Tabs -->
+        <!-- एडमिन टैब्स -->
         <div class="admin-tabs">
-          <button class="tab-btn active" onclick="showAdminTab('teams', this)">Teams</button>
-          <button class="tab-btn" onclick="showAdminTab('districts', this)">Districts</button>
-          <button class="tab-btn" onclick="showAdminTab('prizes', this)">Prizes</button>
+          <button class="tab-btn active" onclick="showAdminTab('teams', this)">टीमें</button>
+          <button class="tab-btn" onclick="showAdminTab('districts', this)">जिले</button>
+          <button class="tab-btn" onclick="showAdminTab('prizes', this)">पुरस्कार</button>
         </div>
 
-        <!-- Teams Tab -->
+        <!-- टीम्स टैब -->
         <div id="tab-teams" class="admin-tab-content">
           <div class="tab-filters">
-            <input type="text" id="searchTeam" placeholder="Team search karein..." oninput="renderAdminTeams()" />
+            <input type="text" id="searchTeam" placeholder="टीम खोजें..." oninput="renderAdminTeams()" />
             <select id="filterDistrict" onchange="renderAdminTeams()">
-              <option value="">All Districts</option>
+              <option value="">सभी जिले</option>
               <option>Agra</option><option>Aligarh</option><option>Ambedkar Nagar</option>
               <option>Amethi</option><option>Amroha</option><option>Auraiya</option>
               <option>Ayodhya</option><option>Azamgarh</option><option>Baghpat</option>
@@ -479,158 +477,158 @@
           <div id="adminTeamsList" class="admin-table-wrap"></div>
         </div>
 
-        <!-- Districts Tab -->
+        <!-- जिले टैब -->
         <div id="tab-districts" class="admin-tab-content" style="display:none;">
-          <button class="btn btn-primary mb-2" onclick="openDistrictModal()"><i class="fas fa-plus"></i> Add District Details</button>
+          <button class="btn btn-primary mb-2" onclick="openDistrictModal()"><i class="fas fa-plus"></i> जिला विवरण जोड़ें</button>
           <div id="adminDistrictList" class="admin-table-wrap"></div>
         </div>
 
-        <!-- Prizes Tab -->
+        <!-- पुरस्कार टैब -->
         <div id="tab-prizes" class="admin-tab-content" style="display:none;">
-          <button class="btn btn-primary mb-2" onclick="openPrizeModal()"><i class="fas fa-plus"></i> Add/Edit Prize</button>
+          <button class="btn btn-primary mb-2" onclick="openPrizeModal()"><i class="fas fa-plus"></i> पुरस्कार जोड़ें / संपादित करें</button>
           <div id="adminPrizeList" class="admin-table-wrap"></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== FOOTER ===== -->
+  <!-- ===== फुटर ===== -->
   <footer class="footer">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <div class="nav-logo"><i class="fas fa-cricket-ball"></i><span>UP Cricket Tournament</span></div>
-          <p>Uttar Pradesh ka sabse bada tennis ball cricket tournament. Har district ka champion, ek state ka hero.</p>
+          <div class="nav-logo"><i class="fas fa-cricket-ball"></i><span>यूपी क्रिकेट टूर्नामेंट</span></div>
+          <p>उत्तर प्रदेश का सबसे बड़ा टेनिस बॉल क्रिकेट टूर्नामेंट। हर जिले का चैंपियन, एक स्टेट का हीरो।</p>
         </div>
         <div class="footer-links">
-          <h4>Quick Links</h4>
+          <h4>त्वरित लिंक</h4>
           <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#registration">Registration</a></li>
-            <li><a href="#payment">Payment</a></li>
-            <li><a href="#districts">Districts</a></li>
-            <li><a href="#prizes">Prizes</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#home">होम</a></li>
+            <li><a href="#registration">रजिस्ट्रेशन</a></li>
+            <li><a href="#payment">पेमेंट</a></li>
+            <li><a href="#districts">जिले</a></li>
+            <li><a href="#prizes">पुरस्कार</a></li>
+            <li><a href="#contact">संपर्क</a></li>
           </ul>
         </div>
         <div class="footer-contact">
-          <h4>Contact</h4>
+          <h4>संपर्क</h4>
           <p><i class="fas fa-phone"></i> +91-9876543210</p>
           <p><i class="fab fa-whatsapp"></i> +91-9876543210</p>
           <p><i class="fas fa-envelope"></i> upcricket2025@gmail.com</p>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>⚠️ Tournament July se shuru hoga. District details aur prize information admin dwara update ki jayegi.</p>
-        <p class="footer-copy">© 2025 UP Tennis Ball Cricket Tournament. All Rights Reserved.</p>
+        <p>⚠️ टूर्नामेंट जुलाई से शुरू होगा। जिला विवरण और पुरस्कार जानकारी एडमिन द्वारा अपडेट की जाएगी।</p>
+        <p class="footer-copy">© 2025 यूपी टेनिस बॉल क्रिकेट टूर्नामेंट। सर्वाधिकार सुरक्षित।</p>
       </div>
     </div>
   </footer>
 
-  <!-- ===== FLOATING BUTTONS ===== -->
-  <a href="https://wa.me/919876543210" class="whatsapp-float" target="_blank" title="WhatsApp">
+  <!-- ===== फ्लोटिंग बटन ===== -->
+  <a href="https://wa.me/919876543210" class="whatsapp-float" target="_blank" title="व्हाट्सएप">
     <i class="fab fa-whatsapp"></i>
   </a>
-  <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">
+  <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="ऊपर जाएं">
     <i class="fas fa-arrow-up"></i>
   </button>
 
-  <!-- ===== TOAST ===== -->
+  <!-- ===== टोस्ट ===== -->
   <div id="toast" class="toast"></div>
 
-  <!-- ===== MODALS ===== -->
+  <!-- ===== मोडल ===== -->
 
-  <!-- District Modal -->
+  <!-- जिला मोडल -->
   <div id="districtModal" class="modal-overlay" style="display:none;">
     <div class="modal-box">
       <div class="modal-header">
-        <h3 id="districtModalTitle">District Details Add Karein</h3>
+        <h3 id="districtModalTitle">जिला विवरण जोड़ें</h3>
         <button onclick="closeModal('districtModal')" class="modal-close"><i class="fas fa-times"></i></button>
       </div>
       <div class="modal-body">
         <input type="hidden" id="editDistrictId" />
         <div class="form-grid">
-          <div class="form-group"><label>District Name *</label><input type="text" id="dDistrict" placeholder="District name" /></div>
-          <div class="form-group"><label>Ground Name *</label><input type="text" id="dGround" placeholder="Ground / Stadium name" /></div>
-          <div class="form-group full-width"><label>Full Address *</label><textarea id="dAddress" rows="2" placeholder="Poora address"></textarea></div>
-          <div class="form-group"><label>Google Map Link</label><input type="url" id="dMapLink" placeholder="https://maps.google.com/..." /></div>
-          <div class="form-group"><label>Tournament Date</label><input type="date" id="dDate" /></div>
-          <div class="form-group"><label>Reporting Time</label><input type="time" id="dReportTime" /></div>
-          <div class="form-group"><label>Match Start Time</label><input type="time" id="dMatchTime" /></div>
-          <div class="form-group"><label>Last Entry Date</label><input type="date" id="dLastEntry" /></div>
-          <div class="form-group"><label>Number of Overs</label><input type="number" id="dOvers" placeholder="e.g. 10" /></div>
-          <div class="form-group"><label>Entry Status</label>
-            <select id="dEntryStatus"><option value="Open">Open</option><option value="Closed">Closed</option></select>
+          <div class="form-group"><label>जिले का नाम *</label><input type="text" id="dDistrict" placeholder="जिले का नाम" /></div>
+          <div class="form-group"><label>मैदान का नाम *</label><input type="text" id="dGround" placeholder="मैदान / स्टेडियम का नाम" /></div>
+          <div class="form-group full-width"><label>पूरा पता *</label><textarea id="dAddress" rows="2" placeholder="पूरा पता लिखें"></textarea></div>
+          <div class="form-group"><label>गूगल मैप लिंक</label><input type="url" id="dMapLink" placeholder="https://maps.google.com/..." /></div>
+          <div class="form-group"><label>टूर्नामेंट तारीख</label><input type="date" id="dDate" /></div>
+          <div class="form-group"><label>रिपोर्टिंग समय</label><input type="time" id="dReportTime" /></div>
+          <div class="form-group"><label>मैच शुरू होने का समय</label><input type="time" id="dMatchTime" /></div>
+          <div class="form-group"><label>अंतिम एंट्री तारीख</label><input type="date" id="dLastEntry" /></div>
+          <div class="form-group"><label>ओवर की संख्या</label><input type="number" id="dOvers" placeholder="जैसे: 10" /></div>
+          <div class="form-group"><label>एंट्री स्थिति</label>
+            <select id="dEntryStatus"><option value="Open">खुला</option><option value="Closed">बंद</option></select>
           </div>
-          <div class="form-group"><label>Contact Person</label><input type="text" id="dContact" placeholder="Contact person name" /></div>
-          <div class="form-group"><label>WhatsApp Number</label><input type="tel" id="dWA" placeholder="WhatsApp number" maxlength="10" /></div>
-          <div class="form-group full-width"><label>Rules / Instructions</label><textarea id="dRules" rows="3" placeholder="Special rules ya instructions"></textarea></div>
+          <div class="form-group"><label>संपर्क व्यक्ति</label><input type="text" id="dContact" placeholder="संपर्क व्यक्ति का नाम" /></div>
+          <div class="form-group"><label>व्हाट्सएप नंबर</label><input type="tel" id="dWA" placeholder="व्हाट्सएप नंबर" maxlength="10" /></div>
+          <div class="form-group full-width"><label>नियम / निर्देश</label><textarea id="dRules" rows="3" placeholder="विशेष नियम या निर्देश"></textarea></div>
         </div>
       </div>
       <div class="modal-footer">
-        <button class="btn btn-primary" onclick="saveDistrict()"><i class="fas fa-save"></i> Save</button>
-        <button class="btn btn-outline" onclick="closeModal('districtModal')">Cancel</button>
+        <button class="btn btn-primary" onclick="saveDistrict()"><i class="fas fa-save"></i> सहेजें</button>
+        <button class="btn btn-outline" onclick="closeModal('districtModal')">रद्द करें</button>
       </div>
     </div>
   </div>
 
-  <!-- Prize Modal -->
+  <!-- पुरस्कार मोडल -->
   <div id="prizeModal" class="modal-overlay" style="display:none;">
     <div class="modal-box">
       <div class="modal-header">
-        <h3>Prize Details Add/Edit Karein</h3>
+        <h3>पुरस्कार विवरण जोड़ें / संपादित करें</h3>
         <button onclick="closeModal('prizeModal')" class="modal-close"><i class="fas fa-times"></i></button>
       </div>
       <div class="modal-body">
         <input type="hidden" id="editPrizeId" />
         <div class="form-grid">
-          <div class="form-group"><label>Prize Type</label>
-            <select id="pType"><option value="district">District Prize</option><option value="state">State Prize</option></select>
+          <div class="form-group"><label>पुरस्कार प्रकार</label>
+            <select id="pType"><option value="district">जिला पुरस्कार</option><option value="state">स्टेट पुरस्कार</option></select>
           </div>
-          <div class="form-group"><label>Title</label><input type="text" id="pTitle" placeholder="e.g. District Winner" /></div>
-          <div class="form-group"><label>Cash Prize</label><input type="text" id="pCash" placeholder="e.g. ₹51,000" /></div>
-          <div class="form-group"><label>Trophy</label><input type="text" id="pTrophy" placeholder="e.g. Gold Trophy" /></div>
-          <div class="form-group"><label>Bike / Gift</label><input type="text" id="pGift" placeholder="e.g. Hero Splendor" /></div>
-          <div class="form-group"><label>Medal</label><input type="text" id="pMedal" placeholder="e.g. Gold Medal" /></div>
-          <div class="form-group"><label>Certificate</label><input type="text" id="pCert" placeholder="e.g. Winner Certificate" /></div>
-          <div class="form-group"><label>Show/Hide</label>
-            <select id="pVisible"><option value="show">Show</option><option value="hide">Hide</option></select>
+          <div class="form-group"><label>शीर्षक</label><input type="text" id="pTitle" placeholder="जैसे: जिला विजेता" /></div>
+          <div class="form-group"><label>नकद पुरस्कार</label><input type="text" id="pCash" placeholder="जैसे: ₹51,000" /></div>
+          <div class="form-group"><label>ट्रॉफी</label><input type="text" id="pTrophy" placeholder="जैसे: गोल्ड ट्रॉफी" /></div>
+          <div class="form-group"><label>बाइक / उपहार</label><input type="text" id="pGift" placeholder="जैसे: Hero Splendor" /></div>
+          <div class="form-group"><label>मेडल</label><input type="text" id="pMedal" placeholder="जैसे: गोल्ड मेडल" /></div>
+          <div class="form-group"><label>प्रमाण पत्र</label><input type="text" id="pCert" placeholder="जैसे: विजेता प्रमाण पत्र" /></div>
+          <div class="form-group"><label>दिखाएं / छुपाएं</label>
+            <select id="pVisible"><option value="show">दिखाएं</option><option value="hide">छुपाएं</option></select>
           </div>
         </div>
       </div>
       <div class="modal-footer">
-        <button class="btn btn-primary" onclick="savePrize()"><i class="fas fa-save"></i> Save Prize</button>
-        <button class="btn btn-outline" onclick="closeModal('prizeModal')">Cancel</button>
+        <button class="btn btn-primary" onclick="savePrize()"><i class="fas fa-save"></i> पुरस्कार सहेजें</button>
+        <button class="btn btn-outline" onclick="closeModal('prizeModal')">रद्द करें</button>
       </div>
     </div>
   </div>
 
-  <!-- Reject Modal -->
+  <!-- अस्वीकरण मोडल -->
   <div id="rejectModal" class="modal-overlay" style="display:none;">
     <div class="modal-box modal-sm">
       <div class="modal-header">
-        <h3>Reject Reason</h3>
+        <h3>अस्वीकृति का कारण</h3>
         <button onclick="closeModal('rejectModal')" class="modal-close"><i class="fas fa-times"></i></button>
       </div>
       <div class="modal-body">
         <input type="hidden" id="rejectTeamId" />
         <div class="form-group">
-          <label>Reject Reason *</label>
-          <textarea id="rejectReason" rows="3" placeholder="Rejection ki wajah likhein..."></textarea>
+          <label>अस्वीकृति का कारण *</label>
+          <textarea id="rejectReason" rows="3" placeholder="अस्वीकृति का कारण लिखें..."></textarea>
         </div>
       </div>
       <div class="modal-footer">
-        <button class="btn btn-danger" onclick="confirmReject()"><i class="fas fa-times-circle"></i> Reject</button>
-        <button class="btn btn-outline" onclick="closeModal('rejectModal')">Cancel</button>
+        <button class="btn btn-danger" onclick="confirmReject()"><i class="fas fa-times-circle"></i> अस्वीकार करें</button>
+        <button class="btn btn-outline" onclick="closeModal('rejectModal')">रद्द करें</button>
       </div>
     </div>
   </div>
 
-  <!-- View Team Modal -->
+  <!-- टीम देखें मोडल -->
   <div id="viewTeamModal" class="modal-overlay" style="display:none;">
     <div class="modal-box modal-lg">
       <div class="modal-header">
-        <h3>Team Details</h3>
+        <h3>टीम विवरण</h3>
         <button onclick="closeModal('viewTeamModal')" class="modal-close"><i class="fas fa-times"></i></button>
       </div>
       <div class="modal-body" id="viewTeamContent"></div>
@@ -638,18 +636,18 @@
     </div>
   </div>
 
-  <!-- PDF Receipt Modal -->
+  <!-- PDF रसीद मोडल -->
   <div id="receiptModal" class="modal-overlay" style="display:none;">
     <div class="modal-box modal-sm">
       <div class="modal-header">
-        <h3><i class="fas fa-file-pdf"></i> Payment Receipt</h3>
+        <h3><i class="fas fa-file-pdf"></i> पेमेंट रसीद</h3>
         <button onclick="closeModal('receiptModal')" class="modal-close"><i class="fas fa-times"></i></button>
       </div>
       <div class="modal-body" id="receiptContent"></div>
       <div class="modal-footer">
-        <button class="btn btn-primary" onclick="downloadReceipt()"><i class="fas fa-download"></i> Download PDF</button>
-        <button class="btn btn-outline" onclick="printReceipt()"><i class="fas fa-print"></i> Print</button>
-        <button class="btn btn-whatsapp" onclick="shareReceiptWA()"><i class="fab fa-whatsapp"></i> Share</button>
+        <button class="btn btn-primary" onclick="downloadReceipt()"><i class="fas fa-download"></i> PDF डाउनलोड करें</button>
+        <button class="btn btn-outline" onclick="printReceipt()"><i class="fas fa-print"></i> प्रिंट करें</button>
+        <button class="btn btn-whatsapp" onclick="shareReceiptWA()"><i class="fab fa-whatsapp"></i> शेयर करें</button>
       </div>
     </div>
   </div>
