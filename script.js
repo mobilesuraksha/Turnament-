@@ -56,7 +56,7 @@ function closeModal(id) { const m = document.getElementById(id); if (m) m.style.
 // ===== UTILITY: WhatsApp =====
 function openWhatsApp(msg = '') {
   const num = '919876543210';
-  const text = encodeURIComponent(msg || 'Namaste! UP Cricket Tournament ke bare mein jankari chahiye.');
+  const text = encodeURIComponent(msg || 'नमस्ते! यूपी क्रिकेट टूर्नामेंट के बारे में जानकारी चाहिए।');
   window.open(`https://wa.me/${num}?text=${text}`, '_blank');
 }
 
@@ -109,34 +109,34 @@ function renderPrizeHighlights() {
   const container = document.getElementById('prizeHighlightCards');
   if (!container) return;
   const prizes = LS.get('prizes');
-  const districtWinner = prizes.find(p => p.title === 'District Winner' && p.visible === 'show');
-  const districtRunner = prizes.find(p => p.title === 'District Runner-up' && p.visible === 'show');
-  const stateWinner = prizes.find(p => p.type === 'state' && p.title === 'State Winner' && p.visible === 'show');
+  const districtWinner = prizes.find(p => p.title === 'जिला विजेता' && p.visible === 'show');
+  const districtRunner = prizes.find(p => p.title === 'जिला उपविजेता' && p.visible === 'show');
+  const stateWinner = prizes.find(p => p.type === 'state' && p.title === 'स्टेट मेगा विजेता' && p.visible === 'show');
 
   const highlights = [
     {
       icon: 'fa-trophy', iconClass: 'gold',
-      title: 'District Winner',
+      title: 'जिला विजेता',
       amount: districtWinner ? districtWinner.cash : '₹51,000+',
-      detail: districtWinner ? [districtWinner.trophy, districtWinner.gift].filter(Boolean).join(' + ') : 'Trophy + Bike + Certificate',
+      detail: districtWinner ? [districtWinner.trophy, districtWinner.gift].filter(Boolean).join(' + ') : 'ट्रॉफी + बाइक + प्रमाण पत्र',
     },
     {
       icon: 'fa-medal', iconClass: 'gold',
-      title: 'District Runner-up',
+      title: 'जिला उपविजेता',
       amount: districtRunner ? districtRunner.cash : '₹21,000+',
-      detail: districtRunner ? [districtRunner.trophy, districtRunner.medal].filter(Boolean).join(' + ') : 'Trophy + Medal',
+      detail: districtRunner ? [districtRunner.trophy, districtRunner.medal].filter(Boolean).join(' + ') : 'ट्रॉफी + मेडल',
     },
     {
       icon: 'fa-crown', iconClass: 'gold',
-      title: 'State Mega Winner',
+      title: 'स्टेट मेगा विजेता',
       amount: stateWinner ? stateWinner.cash : '₹5,00,000+',
-      detail: stateWinner ? [stateWinner.trophy, stateWinner.gift].filter(Boolean).join(' + ') : 'Mega Trophy + Prizes',
+      detail: stateWinner ? [stateWinner.trophy, stateWinner.gift].filter(Boolean).join(' + ') : 'मेगा ट्रॉफी + भव्य पुरस्कार',
     },
     {
       icon: 'fa-star', iconClass: 'green',
-      title: 'Special Awards',
-      amount: 'Multiple',
-      detail: 'Man of Match, Best Batsman, Best Bowler & more!',
+      title: 'विशेष पुरस्कार',
+      amount: 'अनेक',
+      detail: 'मैन ऑफ मैच, बेस्ट बैटसमैन, बेस्ट बॉलर और भी!',
     },
   ];
 
@@ -163,6 +163,7 @@ function renderPrizeHighlights() {
     const logoFile = document.getElementById('teamLogo').files[0];
 
     const readLogoAndSave = (logoData) => {
+
       const team = {
         id: teamId,
         teamName: form.teamName.value.trim(),
@@ -193,7 +194,7 @@ function renderPrizeHighlights() {
       LS.set('lastRegistered', team, {});
       localStorage.setItem('lastRegistered', JSON.stringify(team));
 
-      showToast(`✅ Registration complete! Team ID: ${teamId}`, 'success', 5000);
+      showToast(`✅ रजिस्ट्रेशन पूरा हुआ! टीम आईडी: ${teamId}`, 'success', 5000);
       form.reset();
       setTimeout(() => scrollTo('payment'), 1200);
 
@@ -215,11 +216,11 @@ function renderPrizeHighlights() {
 function validateRegForm() {
   let valid = true;
   const fields = [
-    { id: 'teamName', msg: 'Team name required' },
-    { id: 'captainName', msg: 'Captain name required' },
-    { id: 'city', msg: 'Village/City required' },
-    { id: 'jerseyColor', msg: 'Jersey color required' },
-    { id: 'playerNames', msg: 'Player names required' },
+    { id: 'teamName', msg: 'टीम का नाम आवश्यक है' },
+    { id: 'captainName', msg: 'कप्तान का नाम आवश्यक है' },
+    { id: 'city', msg: 'गाँव/शहर का नाम आवश्यक है' },
+    { id: 'jerseyColor', msg: 'जर्सी का रंग आवश्यक है' },
+    { id: 'playerNames', msg: 'खिलाड़ियों के नाम आवश्यक हैं' },
   ];
 
   fields.forEach(f => {
@@ -240,7 +241,7 @@ function validateRegForm() {
   const errMob = document.getElementById('err-mobileNo');
   if (!/^[6-9]\d{9}$/.test(mob.value.trim())) {
     mob.classList.add('error');
-    errMob.textContent = 'Valid 10-digit mobile number required';
+    errMob.textContent = 'सही 10 अंक का मोबाइल नंबर आवश्यक है';
     valid = false;
   } else { mob.classList.remove('error'); errMob.textContent = ''; }
 
@@ -248,7 +249,7 @@ function validateRegForm() {
   const errWa = document.getElementById('err-whatsappNo');
   if (!/^[6-9]\d{9}$/.test(wa.value.trim())) {
     wa.classList.add('error');
-    errWa.textContent = 'Valid 10-digit WhatsApp number required';
+    errWa.textContent = 'सही 10 अंक का व्हाट्सएप नंबर आवश्यक है';
     valid = false;
   } else { wa.classList.remove('error'); errWa.textContent = ''; }
 
@@ -257,7 +258,7 @@ function validateRegForm() {
   const errDist = document.getElementById('err-district');
   if (!dist.value) {
     dist.classList.add('error');
-    errDist.textContent = 'District select karein';
+    errDist.textContent = 'कृपया जिला चुनें';
     valid = false;
   } else { dist.classList.remove('error'); errDist.textContent = ''; }
 
@@ -266,7 +267,7 @@ function validateRegForm() {
   const errTp = document.getElementById('err-totalPlayers');
   if (!tp.value || +tp.value < 11 || +tp.value > 15) {
     tp.classList.add('error');
-    errTp.textContent = 'Players 11 se 15 ke beech hone chahiye';
+    errTp.textContent = 'खिलाड़ी 11 से 15 के बीच होने चाहिए';
     valid = false;
   } else { tp.classList.remove('error'); errTp.textContent = ''; }
 
@@ -275,7 +276,7 @@ function validateRegForm() {
   const errEm = document.getElementById('err-email');
   if (em.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em.value)) {
     em.classList.add('error');
-    errEm.textContent = 'Valid email address required';
+    errEm.textContent = 'सही ईमेल पता आवश्यक है';
     valid = false;
   } else { em.classList.remove('error'); errEm.textContent = ''; }
 
@@ -283,11 +284,11 @@ function validateRegForm() {
   const terms = document.getElementById('terms');
   const errTerms = document.getElementById('err-terms');
   if (!terms.checked) {
-    errTerms.textContent = 'Terms & Conditions accept karna zaruri hai';
+    errTerms.textContent = 'नियम और शर्तें स्वीकार करना अनिवार्य है';
     valid = false;
   } else { errTerms.textContent = ''; }
 
-  if (!valid) showToast('⚠️ Kripya sabhi required fields fill karein', 'warning');
+  if (!valid) showToast('⚠️ कृपया सभी जरूरी फ़ील्ड भरें', 'warning');
   return valid;
 }
 
@@ -303,11 +304,11 @@ function validateRegForm() {
     const screenshot = document.getElementById('paymentScreenshot').files[0];
     let valid = true;
 
-    if (!teamIdVal) { document.getElementById('err-payTeamId').textContent = 'Team ID / Name required'; valid = false; } else { document.getElementById('err-payTeamId').textContent = ''; }
-    if (!utr) { document.getElementById('err-utrId').textContent = 'UTR / Transaction ID required'; valid = false; } else { document.getElementById('err-utrId').textContent = ''; }
-    if (!screenshot) { document.getElementById('err-paymentScreenshot').textContent = 'Payment screenshot upload karein'; valid = false; } else { document.getElementById('err-paymentScreenshot').textContent = ''; }
+    if (!teamIdVal) { document.getElementById('err-payTeamId').textContent = 'टीम आईडी / नाम आवश्यक है'; valid = false; } else { document.getElementById('err-payTeamId').textContent = ''; }
+    if (!utr) { document.getElementById('err-utrId').textContent = 'UTR / ट्रांजेक्शन आईडी आवश्यक है'; valid = false; } else { document.getElementById('err-utrId').textContent = ''; }
+    if (!screenshot) { document.getElementById('err-paymentScreenshot').textContent = 'पेमेंट स्क्रीनशॉट अपलोड करें'; valid = false; } else { document.getElementById('err-paymentScreenshot').textContent = ''; }
 
-    if (!valid) { showToast('⚠️ Sabhi fields fill karein', 'warning'); return; }
+    if (!valid) { showToast('⚠️ सभी फ़ील्ड भरें', 'warning'); return; }
 
     const savePayment = (screenshotData) => {
       const teams = LS.get('teams');
@@ -329,13 +330,13 @@ function validateRegForm() {
       statusDiv.className = 'payment-status-msg pending';
       statusDiv.innerHTML = `
         <i class="fas fa-clock"></i> 
-        <strong>Payment Submitted!</strong><br/>
-        Status: <strong>Pending Admin Approval</strong><br/>
+        <strong>पेमेंट जमा हो गई!</strong><br/>
+        स्थिति: <strong>एडमिन अप्रूवल लंबित है</strong><br/>
         UTR: ${utr}<br/>
-        <small>Approval ke baad aapko receipt milegi. Admin se WhatsApp pe contact karein.</small>
+        <small>अप्रूवल के बाद आपको रसीद मिलेगी। एडमिन से व्हाट्सएप पर संपर्क करें।</small>
       `;
 
-      showToast('✅ Payment details submit ho gayi! Approval pending hai.', 'success', 5000);
+      showToast('✅ पेमेंट विवरण जमा हो गया! अप्रूवल लंबित है।', 'success', 5000);
       form.reset();
     };
 
@@ -364,7 +365,7 @@ function renderDistrictCards() {
     container.innerHTML = `
       <div class="no-data">
         <i class="fas fa-map-marker-alt"></i>
-        <p>Abhi koi district details available nahi hain.<br/>Admin jald hi update karenge.</p>
+        <p>अभी कोई जिला विवरण उपलब्ध नहीं है।<br/>एडमिन जल्द ही अपडेट करेंगे।</p>
       </div>
     `;
     return;
@@ -379,51 +380,51 @@ function renderDistrictCards() {
       <div class="district-card-body">
         <div class="dc-row">
           <i class="fas fa-stadium"></i>
-          <span class="dc-label">Ground:</span>
+          <span class="dc-label">मैदान:</span>
           <span class="dc-val">${d.ground || '—'}</span>
         </div>
         <div class="dc-row">
           <i class="fas fa-map-pin"></i>
-          <span class="dc-label">Address:</span>
+          <span class="dc-label">पता:</span>
           <span class="dc-val">${d.address || '—'}</span>
         </div>
         <div class="dc-row">
           <i class="fas fa-calendar-alt"></i>
-          <span class="dc-label">Date:</span>
+          <span class="dc-label">तारीख:</span>
           <span class="dc-val">${fmtDate(d.date)}</span>
         </div>
         <div class="dc-row">
           <i class="fas fa-clock"></i>
-          <span class="dc-label">Reporting:</span>
+          <span class="dc-label">रिपोर्टिंग:</span>
           <span class="dc-val">${fmtTime(d.reportTime)}</span>
         </div>
         <div class="dc-row">
           <i class="fas fa-cricket-ball"></i>
-          <span class="dc-label">Match Time:</span>
+          <span class="dc-label">मैच समय:</span>
           <span class="dc-val">${fmtTime(d.matchTime)}</span>
         </div>
         <div class="dc-row">
           <i class="fas fa-hourglass-end"></i>
-          <span class="dc-label">Last Entry:</span>
+          <span class="dc-label">अंतिम एंट्री:</span>
           <span class="dc-val">${fmtDate(d.lastEntry)}</span>
         </div>
         <div class="dc-row">
           <i class="fas fa-list-ol"></i>
-          <span class="dc-label">Overs:</span>
+          <span class="dc-label">ओवर:</span>
           <span class="dc-val">${d.overs || '—'}</span>
         </div>
         <div class="dc-row">
           <i class="fas fa-door-open"></i>
-          <span class="dc-label">Entry:</span>
-          <span class="dc-val"><span class="entry-badge ${(d.entryStatus || 'Open') === 'Open' ? 'open' : 'closed'}">${d.entryStatus || 'Open'}</span></span>
+          <span class="dc-label">एंट्री:</span>
+          <span class="dc-val"><span class="entry-badge ${(d.entryStatus || 'Open') === 'Open' ? 'open' : 'closed'}">${(d.entryStatus || 'Open') === 'Open' ? 'खुला' : 'बंद'}</span></span>
         </div>
-        ${d.rules ? `<div class="dc-row"><i class="fas fa-book"></i><span class="dc-label">Rules:</span><span class="dc-val">${d.rules}</span></div>` : ''}
-        ${d.contact ? `<div class="dc-row"><i class="fas fa-user"></i><span class="dc-label">Contact:</span><span class="dc-val">${d.contact}</span></div>` : ''}
-        ${d.wa ? `<div class="dc-row"><i class="fab fa-whatsapp"></i><span class="dc-label">WhatsApp:</span><span class="dc-val"><a href="https://wa.me/91${d.wa}" target="_blank">${d.wa}</a></span></div>` : ''}
+        ${d.rules ? `<div class="dc-row"><i class="fas fa-book"></i><span class="dc-label">नियम:</span><span class="dc-val">${d.rules}</span></div>` : ''}
+        ${d.contact ? `<div class="dc-row"><i class="fas fa-user"></i><span class="dc-label">संपर्क:</span><span class="dc-val">${d.contact}</span></div>` : ''}
+        ${d.wa ? `<div class="dc-row"><i class="fab fa-whatsapp"></i><span class="dc-label">व्हाट्सएप:</span><span class="dc-val"><a href="https://wa.me/91${d.wa}" target="_blank">${d.wa}</a></span></div>` : ''}
       </div>
       <div class="district-card-footer" style="display:flex;gap:8px;flex-wrap:wrap;">
-        ${d.mapLink ? `<a href="${d.mapLink}" target="_blank" class="btn btn-sm btn-outline"><i class="fas fa-map-marker-alt"></i> Map</a>` : ''}
-        ${d.wa ? `<a href="https://wa.me/91${d.wa}" target="_blank" class="btn btn-sm btn-whatsapp"><i class="fab fa-whatsapp"></i> Contact</a>` : ''}
+        ${d.mapLink ? `<a href="${d.mapLink}" target="_blank" class="btn btn-sm btn-outline"><i class="fas fa-map-marker-alt"></i> नक्शा</a>` : ''}
+        ${d.wa ? `<a href="https://wa.me/91${d.wa}" target="_blank" class="btn btn-sm btn-whatsapp"><i class="fab fa-whatsapp"></i> संपर्क</a>` : ''}
       </div>
     </div>
   `).join('');
@@ -442,7 +443,7 @@ function renderPrizeSection() {
   const prizes = LS.get('prizes').filter(p => p.visible === 'show');
 
   if (prizes.length === 0) {
-    container.innerHTML = `<div class="prize-no-data"><i class="fas fa-trophy" style="font-size:2.5rem;color:var(--gold);display:block;margin-bottom:12px;"></i>Prize details will be updated by admin. Jald hi announce honge!</div>`;
+    container.innerHTML = `<div class="prize-no-data"><i class="fas fa-trophy" style="font-size:2.5rem;color:var(--gold);display:block;margin-bottom:12px;"></i>पुरस्कार विवरण एडमिन द्वारा अपडेट किए जाएंगे। जल्द ही घोषणा होगी!</div>`;
     return;
   }
 
@@ -466,8 +467,8 @@ function renderPrizeSection() {
   `).join('');
 
   container.innerHTML = `
-    ${district.length > 0 ? `<div class="prize-category-title"><i class="fas fa-map-marker-alt"></i> District Level Prizes</div><div class="prize-cards-grid">${renderPrizeCards(district)}</div>` : ''}
-    ${state.length > 0 ? `<div class="prize-category-title"><i class="fas fa-crown"></i> State Level Mega Prizes</div><div class="prize-cards-grid">${renderPrizeCards(state)}</div>` : ''}
+    ${district.length > 0 ? `<div class="prize-category-title"><i class="fas fa-map-marker-alt"></i> जिला स्तरीय पुरस्कार</div><div class="prize-cards-grid">${renderPrizeCards(district)}</div>` : ''}
+    ${state.length > 0 ? `<div class="prize-category-title"><i class="fas fa-crown"></i> स्टेट लेवल मेगा पुरस्कार</div><div class="prize-cards-grid">${renderPrizeCards(state)}</div>` : ''}
   `;
 }
 
@@ -498,9 +499,9 @@ function adminLogin() {
     renderAdminTeams();
     renderAdminDistricts();
     renderAdminPrizes();
-    showToast('✅ Admin login successful!', 'success');
+    showToast('✅ एडमिन लॉगिन सफल!', 'success');
   } else {
-    showToast('❌ Wrong username or password', 'error');
+    showToast('❌ गलत यूजरनेम या पासवर्ड', 'error');
   }
 }
 
@@ -510,7 +511,7 @@ function adminLogout() {
   document.getElementById('adminLogin').style.display = 'flex';
   document.getElementById('adminUser').value = '';
   document.getElementById('adminPass').value = '';
-  showToast('Logged out successfully', 'info');
+  showToast('लॉगआउट सफल', 'info');
 }
 
 // Auto-restore admin session
@@ -562,7 +563,7 @@ function renderAdminTeams() {
   );
 
   if (filtered.length === 0) {
-    container.innerHTML = '<p style="text-align:center;padding:30px;color:var(--text-light);">Koi team nahi mili</p>';
+    container.innerHTML = '<p style="text-align:center;padding:30px;color:var(--text-light);">कोई टीम नहीं मिली</p>';
     return;
   }
 
@@ -570,14 +571,14 @@ function renderAdminTeams() {
     <table class="admin-table">
       <thead>
         <tr>
-          <th>Team ID</th>
-          <th>Team Name</th>
-          <th>Captain</th>
-          <th>District</th>
-          <th>Mobile</th>
-          <th>Payment</th>
-          <th>Status</th>
-          <th>Actions</th>
+          <th>टीम आईडी</th>
+          <th>टीम का नाम</th>
+          <th>कप्तान</th>
+          <th>जिला</th>
+          <th>मोबाइल</th>
+          <th>पेमेंट</th>
+          <th>स्थिति</th>
+          <th>कार्यवाही</th>
         </tr>
       </thead>
       <tbody>
@@ -588,14 +589,14 @@ function renderAdminTeams() {
             <td>${t.captainName}</td>
             <td>${t.district}</td>
             <td>${t.mobileNo}</td>
-            <td>${t.paymentUTR ? '<span class="status-badge pending">Submitted</span>' : '<span style="color:var(--text-light);font-size:0.8rem;">Not submitted</span>'}</td>
-            <td><span class="status-badge ${t.paymentStatus || 'pending'}">${(t.paymentStatus || 'pending').charAt(0).toUpperCase() + (t.paymentStatus || 'pending').slice(1)}</span></td>
+            <td>${t.paymentUTR ? '<span class="status-badge pending">जमा हुई</span>' : '<span style="color:var(--text-light);font-size:0.8rem;">जमा नहीं</span>'}</td>
+            <td><span class="status-badge ${t.paymentStatus || 'pending'}">${statusLabel(t.paymentStatus)}</span></td>
             <td>
               <div class="action-btns">
                 <button class="btn btn-sm btn-outline" onclick="viewTeam('${t.id}')"><i class="fas fa-eye"></i></button>
-                ${t.paymentStatus !== 'approved' ? `<button class="btn btn-sm" style="background:var(--success);color:white;" onclick="approveTeam('${t.id}')"><i class="fas fa-check"></i> Approve</button>` : ''}
-                ${t.paymentStatus !== 'rejected' ? `<button class="btn btn-sm btn-danger" onclick="openRejectModal('${t.id}')"><i class="fas fa-times"></i> Reject</button>` : ''}
-                ${t.paymentStatus === 'approved' ? `<button class="btn btn-sm btn-gold" onclick="viewReceipt('${t.id}')"><i class="fas fa-file-pdf"></i> Receipt</button>` : ''}
+                ${t.paymentStatus !== 'approved' ? `<button class="btn btn-sm" style="background:var(--success);color:white;" onclick="approveTeam('${t.id}')"><i class="fas fa-check"></i> स्वीकृत</button>` : ''}
+                ${t.paymentStatus !== 'rejected' ? `<button class="btn btn-sm btn-danger" onclick="openRejectModal('${t.id}')"><i class="fas fa-times"></i> अस्वीकृत</button>` : ''}
+                ${t.paymentStatus === 'approved' ? `<button class="btn btn-sm btn-gold" onclick="viewReceipt('${t.id}')"><i class="fas fa-file-pdf"></i> रसीद</button>` : ''}
               </div>
             </td>
           </tr>
@@ -603,6 +604,13 @@ function renderAdminTeams() {
       </tbody>
     </table>
   `;
+}
+
+// ===== STATUS LABEL HELPER =====
+function statusLabel(s) {
+  if (s === 'approved') return 'स्वीकृत';
+  if (s === 'rejected') return 'अस्वीकृत';
+  return 'लंबित';
 }
 
 function viewTeam(id) {
@@ -613,32 +621,32 @@ function viewTeam(id) {
   const content = document.getElementById('viewTeamContent');
   content.innerHTML = `
     <div class="team-view-grid">
-      <div class="tv-item"><span class="tv-label">Team ID</span><span class="tv-val">${t.id}</span></div>
-      <div class="tv-item"><span class="tv-label">Team Name</span><span class="tv-val">${t.teamName}</span></div>
-      <div class="tv-item"><span class="tv-label">Captain</span><span class="tv-val">${t.captainName}</span></div>
-      <div class="tv-item"><span class="tv-label">Mobile</span><span class="tv-val">${t.mobileNo}</span></div>
-      <div class="tv-item"><span class="tv-label">WhatsApp</span><span class="tv-val">${t.whatsappNo}</span></div>
-      <div class="tv-item"><span class="tv-label">Email</span><span class="tv-val">${t.email || '—'}</span></div>
-      <div class="tv-item"><span class="tv-label">District</span><span class="tv-val">${t.district}</span></div>
-      <div class="tv-item"><span class="tv-label">City/Village</span><span class="tv-val">${t.city}</span></div>
-      <div class="tv-item"><span class="tv-label">Total Players</span><span class="tv-val">${t.totalPlayers}</span></div>
-      <div class="tv-item"><span class="tv-label">Jersey Color</span><span class="tv-val">${t.jerseyColor}</span></div>
-      <div class="tv-item"><span class="tv-label">Payment UTR</span><span class="tv-val">${t.paymentUTR || '—'}</span></div>
-      <div class="tv-item"><span class="tv-label">Payment Status</span><span class="tv-val"><span class="status-badge ${t.paymentStatus || 'pending'}">${t.paymentStatus || 'pending'}</span></span></div>
-      ${t.rejectionReason ? `<div class="tv-item" style="grid-column:1/-1;"><span class="tv-label">Rejection Reason</span><span class="tv-val" style="color:var(--danger);">${t.rejectionReason}</span></div>` : ''}
-      <div class="tv-item" style="grid-column:1/-1;"><span class="tv-label">Player Names</span><span class="tv-val" style="white-space:pre-line;">${t.playerNames}</span></div>
+      <div class="tv-item"><span class="tv-label">टीम आईडी</span><span class="tv-val">${t.id}</span></div>
+      <div class="tv-item"><span class="tv-label">टीम का नाम</span><span class="tv-val">${t.teamName}</span></div>
+      <div class="tv-item"><span class="tv-label">कप्तान</span><span class="tv-val">${t.captainName}</span></div>
+      <div class="tv-item"><span class="tv-label">मोबाइल</span><span class="tv-val">${t.mobileNo}</span></div>
+      <div class="tv-item"><span class="tv-label">व्हाट्सएप</span><span class="tv-val">${t.whatsappNo}</span></div>
+      <div class="tv-item"><span class="tv-label">ईमेल</span><span class="tv-val">${t.email || '—'}</span></div>
+      <div class="tv-item"><span class="tv-label">जिला</span><span class="tv-val">${t.district}</span></div>
+      <div class="tv-item"><span class="tv-label">शहर/गाँव</span><span class="tv-val">${t.city}</span></div>
+      <div class="tv-item"><span class="tv-label">कुल खिलाड़ी</span><span class="tv-val">${t.totalPlayers}</span></div>
+      <div class="tv-item"><span class="tv-label">जर्सी रंग</span><span class="tv-val">${t.jerseyColor}</span></div>
+      <div class="tv-item"><span class="tv-label">पेमेंट UTR</span><span class="tv-val">${t.paymentUTR || '—'}</span></div>
+      <div class="tv-item"><span class="tv-label">पेमेंट स्थिति</span><span class="tv-val"><span class="status-badge ${t.paymentStatus || 'pending'}">${statusLabel(t.paymentStatus)}</span></span></div>
+      ${t.rejectionReason ? `<div class="tv-item" style="grid-column:1/-1;"><span class="tv-label">अस्वीकृति कारण</span><span class="tv-val" style="color:var(--danger);">${t.rejectionReason}</span></div>` : ''}
+      <div class="tv-item" style="grid-column:1/-1;"><span class="tv-label">खिलाड़ियों के नाम</span><span class="tv-val" style="white-space:pre-line;">${t.playerNames}</span></div>
     </div>
-    ${t.paymentScreenshot ? `<div style="margin-top:16px;"><p style="font-weight:700;margin-bottom:8px;"><i class="fas fa-image"></i> Payment Screenshot:</p><img src="${t.paymentScreenshot}" class="screenshot-preview" alt="Payment screenshot" /></div>` : ''}
-    ${t.logo ? `<div style="margin-top:16px;"><p style="font-weight:700;margin-bottom:8px;"><i class="fas fa-shield-alt"></i> Team Logo:</p><img src="${t.logo}" style="height:80px;border-radius:8px;" alt="Team logo" /></div>` : ''}
+    ${t.paymentScreenshot ? `<div style="margin-top:16px;"><p style="font-weight:700;margin-bottom:8px;"><i class="fas fa-image"></i> पेमेंट स्क्रीनशॉट:</p><img src="${t.paymentScreenshot}" class="screenshot-preview" alt="Payment screenshot" /></div>` : ''}
+    ${t.logo ? `<div style="margin-top:16px;"><p style="font-weight:700;margin-bottom:8px;"><i class="fas fa-shield-alt"></i> टीम लोगो:</p><img src="${t.logo}" style="height:80px;border-radius:8px;" alt="Team logo" /></div>` : ''}
   `;
 
   const actions = document.getElementById('viewTeamActions');
   actions.innerHTML = `
     <div style="display:flex;gap:8px;flex-wrap:wrap;">
-      ${t.paymentStatus !== 'approved' ? `<button class="btn btn-primary" onclick="approveTeam('${t.id}');closeModal('viewTeamModal')"><i class="fas fa-check"></i> Approve</button>` : ''}
-      ${t.paymentStatus !== 'rejected' ? `<button class="btn btn-danger" onclick="openRejectModal('${t.id}');closeModal('viewTeamModal')"><i class="fas fa-times"></i> Reject</button>` : ''}
-      ${t.paymentStatus === 'approved' ? `<button class="btn btn-gold" onclick="viewReceipt('${t.id}')"><i class="fas fa-file-pdf"></i> View Receipt</button>` : ''}
-      <button class="btn btn-outline" onclick="closeModal('viewTeamModal')">Close</button>
+      ${t.paymentStatus !== 'approved' ? `<button class="btn btn-primary" onclick="approveTeam('${t.id}');closeModal('viewTeamModal')"><i class="fas fa-check"></i> स्वीकृत करें</button>` : ''}
+      ${t.paymentStatus !== 'rejected' ? `<button class="btn btn-danger" onclick="openRejectModal('${t.id}');closeModal('viewTeamModal')"><i class="fas fa-times"></i> अस्वीकृत करें</button>` : ''}
+      ${t.paymentStatus === 'approved' ? `<button class="btn btn-gold" onclick="viewReceipt('${t.id}')"><i class="fas fa-file-pdf"></i> रसीद देखें</button>` : ''}
+      <button class="btn btn-outline" onclick="closeModal('viewTeamModal')">बंद करें</button>
     </div>
   `;
 
@@ -656,7 +664,7 @@ function approveTeam(id) {
   LS.set('teams', teams);
   updateStats();
   renderAdminTeams();
-  showToast(`✅ ${t.teamName} approved! Receipt ready.`, 'success');
+  showToast(`✅ ${t.teamName} स्वीकृत! रसीद तैयार है।`, 'success');
 }
 
 function openRejectModal(id) {
@@ -668,7 +676,7 @@ function openRejectModal(id) {
 function confirmReject() {
   const id = document.getElementById('rejectTeamId').value;
   const reason = document.getElementById('rejectReason').value.trim();
-  if (!reason) { showToast('⚠️ Rejection reason likhein', 'warning'); return; }
+  if (!reason) { showToast('⚠️ अस्वीकृति का कारण लिखें', 'warning'); return; }
   const teams = LS.get('teams');
   const t = teams.find(t => t.id === id);
   if (!t) return;
@@ -678,7 +686,7 @@ function confirmReject() {
   closeModal('rejectModal');
   updateStats();
   renderAdminTeams();
-  showToast(`Team rejected. Reason: ${reason}`, 'error');
+  showToast(`टीम अस्वीकृत। कारण: ${reason}`, 'error');
 }
 
 // ===== RECEIPT =====
@@ -688,7 +696,7 @@ function viewReceipt(id) {
   const teams = LS.get('teams');
   const t = teams.find(t => t.id === id);
   if (!t || t.paymentStatus !== 'approved') {
-    showToast('Receipt sirf approved teams ke liye available hai', 'warning');
+    showToast('रसीद केवल स्वीकृत टीमों के लिए उपलब्ध है', 'warning');
     return;
   }
   currentReceiptTeam = t;
@@ -696,20 +704,20 @@ function viewReceipt(id) {
   content.innerHTML = `
     <div class="receipt-box" id="receiptPrintArea">
       <div class="receipt-header">
-        <h4>🏏 UP CRICKET TOURNAMENT 2025</h4>
-        <p>Official Payment Receipt</p>
+        <h4>🏏 यूपी क्रिकेट टूर्नामेंट 2025</h4>
+        <p>आधिकारिक पेमेंट रसीद</p>
       </div>
-      <div class="receipt-row"><span class="r-label">Receipt No:</span><span class="r-val">${t.receiptNo}</span></div>
-      <div class="receipt-row"><span class="r-label">Team ID:</span><span class="r-val">${t.id}</span></div>
-      <div class="receipt-row"><span class="r-label">Team Name:</span><span class="r-val">${t.teamName}</span></div>
-      <div class="receipt-row"><span class="r-label">Captain:</span><span class="r-val">${t.captainName}</span></div>
-      <div class="receipt-row"><span class="r-label">District:</span><span class="r-val">${t.district}</span></div>
-      <div class="receipt-row"><span class="r-label">Mobile:</span><span class="r-val">${t.mobileNo}</span></div>
-      <div class="receipt-row"><span class="r-label">Entry Fee:</span><span class="r-val">₹2,100</span></div>
-      <div class="receipt-row"><span class="r-label">UTR / Transaction:</span><span class="r-val">${t.paymentUTR || '—'}</span></div>
-      <div class="receipt-row"><span class="r-label">Approval Date:</span><span class="r-val">${fmtDate(t.approvedAt)}</span></div>
-      <div class="receipt-row"><span class="r-label">Contact:</span><span class="r-val">+91-9876543210</span></div>
-      <div class="receipt-status">✅ PAYMENT STATUS: APPROVED</div>
+      <div class="receipt-row"><span class="r-label">रसीद नंबर:</span><span class="r-val">${t.receiptNo}</span></div>
+      <div class="receipt-row"><span class="r-label">टीम आईडी:</span><span class="r-val">${t.id}</span></div>
+      <div class="receipt-row"><span class="r-label">टीम का नाम:</span><span class="r-val">${t.teamName}</span></div>
+      <div class="receipt-row"><span class="r-label">कप्तान:</span><span class="r-val">${t.captainName}</span></div>
+      <div class="receipt-row"><span class="r-label">जिला:</span><span class="r-val">${t.district}</span></div>
+      <div class="receipt-row"><span class="r-label">मोबाइल:</span><span class="r-val">${t.mobileNo}</span></div>
+      <div class="receipt-row"><span class="r-label">प्रवेश शुल्क:</span><span class="r-val">₹2,100</span></div>
+      <div class="receipt-row"><span class="r-label">UTR / ट्रांजेक्शन:</span><span class="r-val">${t.paymentUTR || '—'}</span></div>
+      <div class="receipt-row"><span class="r-label">अप्रूवल तारीख:</span><span class="r-val">${fmtDate(t.approvedAt)}</span></div>
+      <div class="receipt-row"><span class="r-label">संपर्क:</span><span class="r-val">+91-9876543210</span></div>
+      <div class="receipt-status">✅ पेमेंट स्थिति: स्वीकृत</div>
     </div>
   `;
   openModal('receiptModal');
@@ -731,26 +739,26 @@ function downloadReceipt() {
   doc.setTextColor(245, 197, 24);
   doc.setFontSize(14);
   doc.setFont('helvetica', 'bold');
-  doc.text('UP TENNIS BALL CRICKET TOURNAMENT 2025', 74, 9, { align: 'center' });
+  doc.text('यूपी टेनिस बॉल क्रिकेट टूर्नामेंट 2025', 74, 9, { align: 'center' });
 
   doc.setFillColor(26, 122, 60);
   doc.rect(0, 16, 148, 8, 'F');
   doc.setTextColor(255, 255, 255);
   doc.setFontSize(10);
-  doc.text('OFFICIAL PAYMENT RECEIPT', 74, 21, { align: 'center' });
+  doc.text('आधिकारिक पेमेंट रसीद', 74, 21, { align: 'center' });
 
   // Receipt details
   const rows = [
     ['Receipt No', t.receiptNo],
     ['Team ID', t.id],
     ['Team Name', t.teamName],
-    ['Captain Name', t.captainName],
+    ['Captain', t.captainName],
     ['District', t.district],
-    ['City / Village', t.city],
+    ['City', t.city],
     ['Mobile', t.mobileNo],
     ['Entry Fee', '\u20B92,100'],
-    ['UTR / Transaction', t.paymentUTR || '—'],
-    ['Approval Date', fmtDate(t.approvedAt)],
+    ['UTR', t.paymentUTR || '—'],
+    ['Approved On', fmtDate(t.approvedAt)],
     ['Contact', '+91-9876543210'],
   ];
 
@@ -780,11 +788,11 @@ function downloadReceipt() {
   doc.setTextColor(100, 130, 160);
   doc.setFontSize(7);
   doc.setFont('helvetica', 'normal');
-  doc.text('This is a computer generated receipt. Tournament July 2025 se shuru hoga.', 74, 195, { align: 'center' });
+  doc.text('यह एक कंप्यूटर जनित रसीद है। टूर्नामेंट जुलाई 2025 से शुरू होगा।', 74, 195, { align: 'center' });
   doc.text('upcricket2025@gmail.com | +91-9876543210', 74, 200, { align: 'center' });
 
   doc.save(`Receipt-${t.id}.pdf`);
-  showToast('✅ PDF downloaded!', 'success');
+  showToast('✅ PDF डाउनलोड हो गई!', 'success');
 }
 
 function printReceipt() {
@@ -807,7 +815,7 @@ function printReceipt() {
 function shareReceiptWA() {
   if (!currentReceiptTeam) return;
   const t = currentReceiptTeam;
-  const msg = `🏏 UP Cricket Tournament 2025 - Payment Receipt\n\nReceipt No: ${t.receiptNo}\nTeam: ${t.teamName}\nCaptain: ${t.captainName}\nDistrict: ${t.district}\nEntry Fee: ₹2,100\nUTR: ${t.paymentUTR}\nStatus: ✅ APPROVED\n\nContact: +91-9876543210`;
+  const msg = `🏏 यूपी क्रिकेट टूर्नामेंट 2025 - पेमेंट रसीद\n\nरसीद नंबर: ${t.receiptNo}\nटीम: ${t.teamName}\nकप्तान: ${t.captainName}\nजिला: ${t.district}\nप्रवेश शुल्क: ₹2,100\nUTR: ${t.paymentUTR}\nस्थिति: ✅ स्वीकृत\n\nसंपर्क: +91-9876543210`;
   openWhatsApp(msg);
 }
 
@@ -820,7 +828,7 @@ function renderAdminDistricts() {
   const districts = LS.get('districtDetails');
 
   if (districts.length === 0) {
-    container.innerHTML = '<p style="text-align:center;padding:30px;color:var(--text-light);">Koi district details nahi hain. Add karein.</p>';
+    container.innerHTML = '<p style="text-align:center;padding:30px;color:var(--text-light);">कोई जिला विवरण नहीं है। जोड़ें।</p>';
     return;
   }
 
@@ -828,12 +836,12 @@ function renderAdminDistricts() {
     <table class="admin-table">
       <thead>
         <tr>
-          <th>District</th>
-          <th>Ground</th>
-          <th>Date</th>
-          <th>Entry</th>
-          <th>Contact</th>
-          <th>Actions</th>
+          <th>जिला</th>
+          <th>मैदान</th>
+          <th>तारीख</th>
+          <th>एंट्री</th>
+          <th>संपर्क</th>
+          <th>कार्यवाही</th>
         </tr>
       </thead>
       <tbody>
@@ -842,11 +850,11 @@ function renderAdminDistricts() {
             <td><strong>${d.district}</strong></td>
             <td>${d.ground || '—'}</td>
             <td>${fmtDate(d.date)}</td>
-            <td><span class="entry-badge ${(d.entryStatus || 'Open') === 'Open' ? 'open' : 'closed'}">${d.entryStatus || 'Open'}</span></td>
+            <td><span class="entry-badge ${(d.entryStatus || 'Open') === 'Open' ? 'open' : 'closed'}">${(d.entryStatus || 'Open') === 'Open' ? 'खुला' : 'बंद'}</span></td>
             <td>${d.wa || '—'}</td>
             <td>
               <div class="action-btns">
-                <button class="btn btn-sm btn-outline" onclick="editDistrict('${d.id}')"><i class="fas fa-edit"></i> Edit</button>
+                <button class="btn btn-sm btn-outline" onclick="editDistrict('${d.id}')"><i class="fas fa-edit"></i> संपादित</button>
                 <button class="btn btn-sm btn-danger" onclick="deleteDistrict('${d.id}')"><i class="fas fa-trash"></i></button>
               </div>
             </td>
@@ -893,7 +901,7 @@ function editDistrict(id) {
 
 function saveDistrict() {
   const districtName = document.getElementById('dDistrict').value.trim();
-  if (!districtName) { showToast('⚠️ District name required', 'warning'); return; }
+  if (!districtName) { showToast('⚠️ जिले का नाम आवश्यक है', 'warning'); return; }
 
   const data = {
     id: editingDistrictId || genId('DIST'),
@@ -924,17 +932,17 @@ function saveDistrict() {
   closeModal('districtModal');
   renderAdminDistricts();
   renderDistrictCards();
-  showToast(`✅ ${districtName} saved!`, 'success');
+  showToast(`✅ ${districtName} सहेजा गया!`, 'success');
   editingDistrictId = null;
 }
 
 function deleteDistrict(id) {
-  if (!confirm('Is district ko delete karein?')) return;
+  if (!confirm('इस जिले को हटाएं?')) return;
   const districts = LS.get('districtDetails').filter(d => d.id !== id);
   LS.set('districtDetails', districts);
   renderAdminDistricts();
   renderDistrictCards();
-  showToast('District deleted', 'info');
+  showToast('जिला हटा दिया गया', 'info');
 }
 
 // ===== ADMIN: Prizes =====
@@ -946,7 +954,7 @@ function renderAdminPrizes() {
   const prizes = LS.get('prizes');
 
   if (prizes.length === 0) {
-    container.innerHTML = '<p style="text-align:center;padding:30px;color:var(--text-light);">Koi prize add nahi kiya. Add karein.</p>';
+    container.innerHTML = '<p style="text-align:center;padding:30px;color:var(--text-light);">कोई पुरस्कार नहीं जोड़ा। जोड़ें।</p>';
     return;
   }
 
@@ -954,24 +962,24 @@ function renderAdminPrizes() {
     <table class="admin-table">
       <thead>
         <tr>
-          <th>Type</th>
-          <th>Title</th>
-          <th>Cash Prize</th>
-          <th>Trophy</th>
-          <th>Gift/Bike</th>
-          <th>Visible</th>
-          <th>Actions</th>
+          <th>प्रकार</th>
+          <th>शीर्षक</th>
+          <th>नकद पुरस्कार</th>
+          <th>ट्रॉफी</th>
+          <th>बाइक/उपहार</th>
+          <th>स्थिति</th>
+          <th>कार्यवाही</th>
         </tr>
       </thead>
       <tbody>
         ${prizes.map(p => `
           <tr>
-            <td><span class="status-badge ${p.type === 'district' ? 'pending' : 'approved'}">${p.type}</span></td>
+            <td><span class="status-badge ${p.type === 'district' ? 'pending' : 'approved'}">${p.type === 'district' ? 'जिला' : 'स्टेट'}</span></td>
             <td><strong>${p.title}</strong></td>
             <td>${p.cash || '—'}</td>
             <td>${p.trophy || '—'}</td>
             <td>${p.gift || '—'}</td>
-            <td><span class="status-badge ${p.visible === 'show' ? 'approved' : 'rejected'}">${p.visible}</span></td>
+            <td><span class="status-badge ${p.visible === 'show' ? 'approved' : 'rejected'}">${p.visible === 'show' ? 'दिख रहा' : 'छुपा'}</span></td>
             <td>
               <div class="action-btns">
                 <button class="btn btn-sm btn-outline" onclick="editPrize('${p.id}')"><i class="fas fa-edit"></i></button>
@@ -1013,7 +1021,7 @@ function editPrize(id) {
 
 function savePrize() {
   const title = document.getElementById('pTitle').value.trim();
-  if (!title) { showToast('⚠️ Prize title required', 'warning'); return; }
+  if (!title) { showToast('⚠️ पुरस्कार शीर्षक आवश्यक है', 'warning'); return; }
 
   const data = {
     id: editingPrizeId || genId('PRZ'),
@@ -1040,18 +1048,18 @@ function savePrize() {
   renderAdminPrizes();
   renderPrizeSection();
   renderPrizeHighlights();
-  showToast('✅ Prize saved!', 'success');
+  showToast('✅ पुरस्कार सहेजा गया!', 'success');
   editingPrizeId = null;
 }
 
 function deletePrize(id) {
-  if (!confirm('Is prize ko delete karein?')) return;
+  if (!confirm('इस पुरस्कार को हटाएं?')) return;
   const prizes = LS.get('prizes').filter(p => p.id !== id);
   LS.set('prizes', prizes);
   renderAdminPrizes();
   renderPrizeSection();
   renderPrizeHighlights();
-  showToast('Prize deleted', 'info');
+  showToast('पुरस्कार हटा दिया गया', 'info');
 }
 
 // ===== SEED DEFAULT PRIZES (First Load) =====
@@ -1059,10 +1067,10 @@ function seedDefaultPrizes() {
   const existing = LS.get('prizes');
   if (existing.length === 0) {
     const defaults = [
-      { id: genId('PRZ'), type: 'district', title: 'District Winner', cash: '₹51,000', trophy: 'Gold Trophy', gift: 'Hero Splendor Bike', medal: 'Gold Medal', cert: 'Winner Certificate', visible: 'show' },
-      { id: genId('PRZ'), type: 'district', title: 'District Runner-up', cash: '₹21,000', trophy: 'Silver Trophy', gift: '', medal: 'Silver Medal', cert: 'Runner-up Certificate', visible: 'show' },
-      { id: genId('PRZ'), type: 'state', title: 'State Mega Winner', cash: '₹5,00,000', trophy: 'Mega Gold Trophy', gift: 'Royal Enfield / Car', medal: 'Gold Medal', cert: 'State Champion Certificate', visible: 'show' },
-      { id: genId('PRZ'), type: 'state', title: 'State Runner-up', cash: '₹2,00,000', trophy: 'Silver Trophy', gift: 'Motorcycle', medal: 'Silver Medal', cert: 'State Runner-up Certificate', visible: 'show' },
+      { id: genId('PRZ'), type: 'district', title: 'जिला विजेता', cash: '₹51,000', trophy: 'गोल्ड ट्रॉफी', gift: 'Hero Splendor बाइक', medal: 'गोल्ड मेडल', cert: 'विजेता प्रमाण पत्र', visible: 'show' },
+      { id: genId('PRZ'), type: 'district', title: 'जिला उपविजेता', cash: '₹21,000', trophy: 'सिल्वर ट्रॉफी', gift: '', medal: 'सिल्वर मेडल', cert: 'उपविजेता प्रमाण पत्र', visible: 'show' },
+      { id: genId('PRZ'), type: 'state', title: 'स्टेट मेगा विजेता', cash: '₹5,00,000', trophy: 'मेगा गोल्ड ट्रॉफी', gift: 'Royal Enfield / कार', medal: 'गोल्ड मेडल', cert: 'स्टेट चैंपियन प्रमाण पत्र', visible: 'show' },
+      { id: genId('PRZ'), type: 'state', title: 'स्टेट उपविजेता', cash: '₹2,00,000', trophy: 'सिल्वर ट्रॉफी', gift: 'मोटरसाइकिल', medal: 'सिल्वर मेडल', cert: 'स्टेट उपविजेता प्रमाण पत्र', visible: 'show' },
     ];
     LS.set('prizes', defaults);
   }
